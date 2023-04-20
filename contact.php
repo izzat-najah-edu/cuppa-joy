@@ -8,7 +8,7 @@
     <title>Cuppa Joy | Contact</title>
 </head>
 <body>
-<?php include "includes/navbar.php" ?>
+<?php include "includes/header.php" ?>
 <main>
 
 </main>

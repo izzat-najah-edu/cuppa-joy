@@ -5,11 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
     <title>Cuppa Joy | Home</title>
 </head>
 <body>
-<?php include "includes/navbar.php" ?>
+<?php include "includes/header.php" ?>
 <main>
 
 </main>
