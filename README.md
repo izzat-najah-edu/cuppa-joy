@@ -23,14 +23,17 @@ A fictional coffee shop website, showcasing the services, products, and events o
 #### Installation
 1. Download and install XAMPP from the [official website](https://www.apachefriends.org/index.html).
 2. Clone or download the Cuppa Joy project from the repository.
-3. Place the `cuppa_joy` folder in the `htdocs` folder of your XAMPP installation (e.g., `C:/xampp/htdocs/` on Windows).
+3. Place the project folder in the `htdocs` folder of your XAMPP installation (e.g., `C:/xampp/htdocs/` on Windows).
 4. Start the Apache and MySQL services using the XAMPP Control Panel.
 5. Open your browser and go to `http://localhost/phpmyadmin`.
 6. Import and execute the `CREATE.sql` file located in the `sql` folder to set up the necessary tables.
-7. Import and execute the `INSERT.sql` file from the same location to fill the tables with data
+7. Import and execute the `INSERT.sql` file from the same location to fill the tables with data.
+
+#### Security Fix
+- After setting up the database be sure to delete the `sql` file to prevent public access from users.
 
 #### Usage
-- Open your browser and go to `http://localhost/cuppa_joy`. 
+- Open your browser and go to `http://localhost/cuppa-joy`. 
 - Explore the website.
 
 ## Credits
