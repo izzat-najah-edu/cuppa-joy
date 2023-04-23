@@ -9,11 +9,9 @@ A fictional coffee shop website, showcasing the services, products, and events o
 - Subscriber registration
 
 ## Technologies
-- HTML
-- CSS
-- JavaScript
-- PHP
-- MySQL
+- HTML, CSS, JavaScript.
+- Bootstrap 5 framework for CSS.
+- PHP & MySQL for the backend.
 
 ## Setup
 
