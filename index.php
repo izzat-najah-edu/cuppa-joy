@@ -15,7 +15,7 @@
 $logo_url = "assets/images/icons/logo_animated.gif";
 $logo_title = "Cuppa Joy";
 $logo_description = "Your Home Away from Home for the Finest Coffee Experience";
-include "includes/header.php"
+include "includes/header.php";
 ?>
 <main class="p-5">
     <div class="p-5 container-fluid max-width-1200 bg-light rounded-3">
