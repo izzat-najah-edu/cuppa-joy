@@ -10,10 +10,100 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <title>Cuppa Joy | Home</title>
 </head>
-<body>
+<body class="bg-my-primary-gradient">
 <?php include "includes/header.php" ?>
-<main>
-
+<main class="p-5">
+    <div class="p-5 container-fluid max-width-1200 bg-light rounded-3">
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+        </section>
+        <hr>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+        </section>
+        <hr>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+        </section>
+        <hr>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+        </section>
+        <hr>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
+                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
+                quos similique!</p>
+        </section>
+    </div>
 </main>
 <?php include "includes/footer.php" ?>
 <script src="assets/js/main.js"></script>
