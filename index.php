@@ -11,13 +11,16 @@
     <title>Cuppa Joy | Home</title>
 </head>
 <body class="bg-my-primary-gradient">
-<?php
-$logo_url = "assets/images/icons/logo_animated.gif";
-$logo_title = "Cuppa Joy";
-$logo_description = "Your Home Away from Home for the Finest Coffee Experience";
-include "includes/header.php";
-?>
+<?php include "includes/header.php"; ?>
 <main class="p-5">
+    <div class="card max-width-400 bg-transparent border-0 text-light text-center">
+        <img class="card-img-top" src="assets/images/icons/logo_animated.gif" alt="Logo">
+        <div class="card-body">
+            <h2 class="card-title display-2">Cuppa Joy</h2>
+            <hr>
+            <p class="card-text">Your Home Away from Home for the Finest Coffee Experience</p>
+        </div>
+    </div>
     <div class="p-5 container-fluid max-width-1200 bg-light rounded-3">
         <section>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta

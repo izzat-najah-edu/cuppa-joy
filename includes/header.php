@@ -1,17 +1,43 @@
 <header>
-    <?php require "navbar.php" ?>
-    <div class="card max-width-400 bg-transparent border-0 text-light text-center">
-        <?php if (isset($logo_url)) { ?>
-            <img class="card-img-top" src="<?php echo $logo_url ?>" alt="Logo">
-        <?php } ?>
-        <div class="card-body">
-            <?php if (isset($logo_title)) { ?>
-                <h2 class="card-title display-2"><?php echo $logo_title ?></h2>
-            <?php } ?>
-            <?php if (isset($logo_description)) { ?>
-                <hr>
-                <p class="card-text"><?php echo $logo_description ?></p>
-            <?php } ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="navbar-toggler-icon"></i>
+            </button>
         </div>
-    </div>
+        <div id="navbarContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/cuppa-joy/index.php">
+                        <span class="display-6 d-inline-flex">
+                            <i class="bi bi-house"></i>Home
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cuppa-joy/menu.php">
+                        <span class="display-6 d-inline-flex">
+                            <i class="bi bi-list"></i>Menu
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cuppa-joy/about.php">
+                        <span class="display-6 d-inline-flex">
+                            <i class="bi bi-file-person"></i>About
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cuppa-joy/contact.php">
+                        <span class="display-6 d-inline-flex">
+                            <i class="bi bi-headset"></i>Contact
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-fluid">
+        </div>
+    </nav>
 </header>
