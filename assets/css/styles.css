@@ -86,3 +86,12 @@ img {
 .nav-item:nth-child(4) {
     animation-delay: 1s;
 }
+
+/* Footer */
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
