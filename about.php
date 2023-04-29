@@ -1,6 +1,6 @@
 <?php
-include "includes/header.php";
-include "includes/footer.php";
+require_once "includes/header.php";
+require_once "includes/footer.php";
 
 use component\Header;
 use component\Footer;
