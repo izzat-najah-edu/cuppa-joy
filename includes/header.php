@@ -1,18 +1,18 @@
-<?php
+<?php namespace component;
 
 class Header
 {
-    public function open()
+    public function open(): void
     {
         echo '<header>';
     }
 
-    public function close()
+    public function close(): void
     {
         echo '</header>';
     }
 
-    public function renderNavbar()
+    public function renderNavbar(): void
     {
         ?>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">

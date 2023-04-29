@@ -1,6 +1,9 @@
 <?php
-include_once "includes/header.php";
-include_once "includes/footer.php";
+include "includes/header.php";
+include "includes/footer.php";
+
+use component\Footer;
+use component\Header;
 
 $header = new Header();
 $footer = new Footer();

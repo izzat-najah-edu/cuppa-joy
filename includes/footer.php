@@ -1,8 +1,8 @@
-<?php
+<?php namespace component;
 
 class Footer
 {
-    public function render()
+    public function render(): void
     {
         ?>
         <footer class="bg-dark text-white py-4 mt-5">
