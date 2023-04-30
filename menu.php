@@ -1,6 +1,7 @@
 <?php
 require_once "includes/header.php";
 require_once "includes/footer.php";
+require_once "includes/config.php";
 
 use component\Header;
 use component\Footer;
@@ -19,16 +20,39 @@ $footer = new Footer();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
     <title>Cuppa Joy | Our Menu</title>
 </head>
-<body>
+<body class="bg-my-primary-gradient">
 <?php
 $header->open();
 $header->renderNavbar();
 $header->close();
 ?>
 <main>
+    <div class="content-wrapper">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            <?php
+            // Generate all coffee figures from the database:
+            $query = "select * from coffee";
+            $result = Database::getConnection()->query($query);
 
+            for ($i = 0; $i < $result->num_rows; $i++) {
+                $row = $result->fetch_object();
+                ?>
+                <div class="card menu-item">
+                    <img class="card-img-top" src="assets/<?php echo $row->image_url ?>" alt="<?php echo $row->name ?>">
+                    <div class="card-body">
+                        <h3 class="card-title"><?php echo $row->name ?></h3>
+                        <p class="card-text"><?php echo $row->description ?></p>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
 </main>
 <?php
 $footer->render();
