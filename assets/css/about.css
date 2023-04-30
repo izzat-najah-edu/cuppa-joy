@@ -1,0 +1,198 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 1);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 50px auto;
+    width: 80%;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0.15)),
+    linear-gradient(60deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0.15));
+    background-size: 50px 50px;
+    z-index: -1;
+    animation: movePattern 5s linear infinite;
+}
+
+@keyframes movePattern {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.wrapper h1 {
+    font-size: 3rem;
+    margin: 25px 0;
+    text-align: center;
+    font-weight: 600;
+    color: var(--main-color);
+    text-transform: uppercase;
+    position: relative;
+    animation: slideInDown 1s;
+}
+
+.wrapper h1::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: var(--main-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.wrapper p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 30px;
+    max-width: 70%;
+    font-weight: 500;
+    animation: slideInUp 1s;
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin-top: 30px;
+}
+
+.card {
+    min-height: 220px;
+    width: 320px;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    margin: 10px 4px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card i {
+    margin: 20px;
+    color: #1a2120;
+    font-size: 2rem;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.card p {
+    color: #6c757d;
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover i {
+    color: #fff;
+}
+
+.card:hover p {
+    color: #fff;
+}
+
+.card:hover h2 {
+    font-weight: 550;
+    color: #f2f2f2;
+}
+
+.card:nth-child(1):hover,
+.card:nth-child(2):hover,
+.card:nth-child(3):hover,
+.card:nth-child(4):hover,
+.card:nth-child(5):hover,
+.card:nth-child(6):hover {
+    background: var(--main-gradient),
+    url('assets/images/background1.jpg');
+    background-size: cover;
+}
+
+/* responsive section */
+
+@media (max-width: 991px) {
+    .wrapper {
+        padding: 25px;
+    }
+
+    .wrapper h1 {
+        font-size: 2.5rem;
+        font-weight: 550;
+    }
+
+    .content-box {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .card {
+        min-width: 300px;
+        margin: 10px auto;
+    }
+}
