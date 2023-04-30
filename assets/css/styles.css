@@ -49,11 +49,6 @@ img {
     max-height: 6rem;
 }
 
-.nav-item {
-    margin-left: 1.75rem;
-    margin-right: 1.75rem;
-}
-
 .nav-link .d-inline-flex {
     gap: 0.5rem;
 }
@@ -70,6 +65,8 @@ img {
 }
 
 .nav-item {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
     opacity: 0;
     animation-name: fadeIn;
     animation-duration: 1s;
