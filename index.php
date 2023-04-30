@@ -37,95 +37,59 @@ $header->close();
         </div>
     </div>
     <div class="p-5 container-fluid max-width-1200 bg-light rounded-3">
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-        </section>
-        <hr>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-        </section>
-        <hr>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-        </section>
-        <hr>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-        </section>
-        <hr>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex ipsa libero molestias porro saepe soluta
-                voluptatibus. Atque beatae expedita necessitatibus quibusdam quos rerum voluptas. Eaque quisquam quo
-                quos similique!</p>
-        </section>
+        <div class="p-5 container-fluid max-width-1200 bg-light rounded-3">
+            <section id="home-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Welcome to Cuppa Joy!</h2>
+                        <p>Discover the best coffee experience with our finest selection of beans and exceptional
+                            brewing
+                            techniques.</p>
+                        <a href="menu.php" class="button">Explore Our Menu</a>
+                    </div>
+                    <img class="card-img-bottom" src="assets/images/background2.jpg" alt="background">
+                </div>
+            </section>
+            <hr>
+            <section id="about-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>About Us</h2>
+                        <p>At Cuppa Joy, our passion is to provide the finest coffee experience by sourcing the best
+                            beans
+                            and
+                            employing expert baristas. We believe that every cup of coffee should be a moment of joy and
+                            relaxation.</p>
+                    </div>
+                    <img class="card-img-bottom" src="assets/images/background1.jpg" alt="background">
+                </div>
+            </section>
+            <hr>
+            <section id="register-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Join Our Loyalty Program</h2>
+                        <p>Become a member of the Cuppa Joy family and enjoy exclusive perks, discounts, and more!</p>
+                        <a href="contact.php" class="button">Register Now</a>
+                    </div>
+                    <img class="card-img-bottom" src="assets/images/gallery3.jpg" alt="background">
+                </div>
+            </section>
+            <hr>
+            <section id="contact-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Contact Us</h2>
+                        <p>Have questions or feedback? We'd love to hear from you! Get in touch with us through our
+                            contact
+                            form or
+                            social media channels.</p>
+                        <a href="contact.php" class="button">Contact Form</a>
+                    </div>
+                    <img class="card-img-bottom" src="assets/images/gallery2.jpg" alt="background">
+                </div>
+            </section>
+        </div>
     </div>
 </main>
 <?php
