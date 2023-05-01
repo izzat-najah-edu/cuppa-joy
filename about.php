@@ -2,8 +2,8 @@
 require_once "includes/header.php";
 require_once "includes/footer.php";
 
-use component\Header;
-use component\Footer;
+use html\Header;
+use html\Footer;
 
 $header = new Header();
 $footer = new Footer();

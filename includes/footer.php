@@ -1,4 +1,4 @@
-<?php namespace component;
+<?php namespace html;
 
 class Footer
 {

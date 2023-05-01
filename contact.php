@@ -2,7 +2,7 @@
 require_once "includes/footer.php";
 require_once "includes/config.php";
 
-use component\Footer;
+use html\Footer;
 
 $footer = new Footer();
 ?>
