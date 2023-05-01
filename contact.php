@@ -1,4 +1,5 @@
 <?php namespace html;
+
 require_once "includes/component.php";
 ?>
 <!doctype html>
