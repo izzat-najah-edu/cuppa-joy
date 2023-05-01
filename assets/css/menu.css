@@ -36,7 +36,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s forwards;
-    border: 2px solid var(--main-color);
+    border: 2px solid var(--primary-color);
 }
 
 .menu-item img {

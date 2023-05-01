@@ -21,7 +21,7 @@ $result = Database::getConnection()->query($query);
     <link rel="stylesheet" href="assets/css/menu.css">
     <title>Menu | Cuppa Joy</title>
 </head>
-<body class="bg-my-primary-gradient">
+<body>
 <header>
     <?php renderNavbar() ?>
 </header>

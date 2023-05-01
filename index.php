@@ -14,11 +14,11 @@ require_once "includes/component.php";
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Home | Cuppa Joy</title>
 </head>
-<body class="bg-my-primary-gradient">
+<body>
 <header>
     <?php renderNavbar() ?>
 </header>
-<main class="p-5">
+<main>
     <div class="card max-width-400 bg-transparent border-0 text-light text-center">
         <img class="card-img-top" src="assets/images/icons/logo_animated.gif" alt="Logo">
         <div class="card-body">

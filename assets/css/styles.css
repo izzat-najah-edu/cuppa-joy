@@ -3,8 +3,18 @@
 /* General */
 
 :root {
-    --main-color: #4e54c8;
-    --main-gradient: linear-gradient(225deg, #4e54c8, #8f94fb);
+    --primary-color: #4e54c8;
+    --primary-gradient: linear-gradient(225deg, #4e54c8, #8f94fb);
+}
+
+.bg-my-primary {
+    background-color: var(--primary-color);
+}
+
+body, .bg-my-primary-gradient {
+    background-image: var(--primary-gradient);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body {
@@ -15,16 +25,6 @@ body {
 img {
     max-width: 100%;
     height: auto;
-}
-
-.bg-my-primary {
-    background-color: var(--main-color);
-}
-
-.bg-my-primary-gradient {
-    background-image: var(--main-gradient);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 @media (min-width: 1200px) {

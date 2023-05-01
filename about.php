@@ -15,7 +15,7 @@ require_once "includes/component.php";
     <link rel="stylesheet" href="assets/css/about.css">
     <title>About | Cuppa Joy</title>
 </head>
-<body class="bg-my-primary-gradient">
+<body>
 <header>
     <?php renderNavbar() ?>
 </header>
