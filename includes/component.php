@@ -1,9 +1,9 @@
 <?php namespace html;
 
 function renderNavbar(): void {
-    require "components/navbar.php";
+    require_once "components/navbar.php";
 }
 
 function renderFooter(): void {
-    require "components/footer.php";
+    require_once "components/footer.php";
 }

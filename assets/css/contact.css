@@ -240,8 +240,7 @@ header ul {
     color: var(--text-color);
     font-weight: 600;
     font-size: 0.95rem;
-    border: 2px solid transparent;
-    box-shadow: 0 0 0 0px var(--input-shadow);
+    box-shadow: 0 0 0 0 var(--input-shadow);
     transition: 0.3s;
 }
 
@@ -281,7 +280,7 @@ textarea.contact-input ~ label {
     transform: none;
 }
 
-textarea.contact-input ~ icon {
+textarea.contact-input ~ .icon {
     top: 1.2rem;
     transform: none;
 }
@@ -356,7 +355,6 @@ textarea.contact-input ~ icon {
     opacity: 0;
     background-color: red;
     cursor: pointer;
-    opacity: 0;
 }
 
 .right {
