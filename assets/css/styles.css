@@ -27,27 +27,12 @@ img {
     height: auto;
 }
 
-@media (min-width: 1200px) {
-    .max-width-1200 {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.bg-my-pattern {
+    background-image: url('../images/moroccan-flower.png');
+    background-repeat: repeat;
 }
 
 /* Header */
-
-@media (min-width: 400px) {
-    .max-width-400 {
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-.navbar-brand img {
-    max-height: 6rem;
-}
 
 .nav-link .d-inline-flex {
     gap: 0.5rem;
@@ -96,4 +81,22 @@ img {
     font-weight: bold;
     color: #ffc107;
     margin-bottom: 1rem;
+}
+
+/* Tweaks */
+
+@media (min-width: 1200px) {
+    .max-width-1200 {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 400px) {
+    .max-width-400 {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
