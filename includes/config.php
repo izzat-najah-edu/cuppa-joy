@@ -1,11 +1,9 @@
 <?php
 
-class Database
-{
+class Database {
     private static ?mysqli $connection = null;
 
-    public static function getConnection(): mysqli
-    {
+    public static function getConnection(): mysqli {
         if (self::$connection === null) {
             try {
                 self::$connection = new mysqli(

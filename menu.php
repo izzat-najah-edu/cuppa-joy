@@ -1,15 +1,13 @@
-<?php
-require_once "includes/header.php";
-require_once "includes/footer.php";
+<?php namespace html;
+
+require_once "includes/component.php";
 require_once "includes/config.php";
 
-use html\Header;
-use html\Footer;
+use Database;
 
-$header = new Header();
-$footer = new Footer();
+$query = "select * from coffee";
+$result = Database::getConnection()->query($query);
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,45 +19,41 @@ $footer = new Footer();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/menu.css">
-    <title>Cuppa Joy | Our Menu</title>
+    <title>Menu | Cuppa Joy</title>
 </head>
 <body class="bg-my-primary-gradient">
-<?php
-$header->open();
-$header->renderNavbar();
-$header->close();
-?>
+<header>
+    <?php renderNavbar() ?>
+</header>
 <main>
     <div class="content-wrapper">
         <h2>Our Menu</h2>
         <div class="menu-items">
             <?php
             // Generate all coffee figures from the database:
-            $query = "select * from coffee";
-            $result = Database::getConnection()->query($query);
-
             for ($i = 0; $i < $result->num_rows; $i++) {
                 $row = $result->fetch_object();
-                ?>
-                <div class="card menu-item">
-                    <img class="card-img-top" src="assets/<?php echo $row->image_url ?>" alt="<?php echo $row->name ?>">
-                    <div class="card-body">
-                        <h3 class="card-title"><?php echo $row->name ?></h3>
-                        <p class="card-text"><?php echo $row->description ?></p>
-                    </div>
-                </div>
-                <?php
+                echo createCard($row->image_url, $row->name, $row->description);
             }
             ?>
         </div>
     </div>
 </main>
-<?php
-$footer->render();
-?>
-<script src="assets/js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+<?php renderFooter() ?>
 </body>
 </html>
+<?php
+
+function createCard($image_url, $name, $description): string {
+    return <<<CARD
+        <div class="card menu-item">
+            <img class="card-img-top" src="assets/$image_url" alt="$name">
+            <div class="card-body">
+                <h3 class="card-title">$name</h3>
+                <p class="card-text">$description</p>
+            </div>
+        </div>
+    CARD;
+}
+
+?>
