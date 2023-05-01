@@ -34,7 +34,7 @@ require_once "includes/component.php";
                 "Welcome to Cuppa Joy!",
                 "Discover the best coffee experience with our finest selection of beans and exceptional brewing techniques.",
                 "Explore Our Menu",
-                "menu.php",
+                "menu",
                 "assets/images/background2.jpg",
                 "background"
             );
@@ -50,7 +50,7 @@ require_once "includes/component.php";
                 "Join Our Loyalty Program",
                 "Become a member of the Cuppa Joy family and enjoy exclusive perks, discounts, and more!",
                 "Register Now",
-                "contact.php",
+                "contact",
                 "assets/images/gallery3.jpg",
                 "background"
             );
@@ -58,7 +58,7 @@ require_once "includes/component.php";
                 "Contact Us",
                 "Have questions or feedback? We'd love to hear from you! Get in touch with us through our contact form or social media channels.",
                 "Contact Form",
-                "contact.php",
+                "contact",
                 "assets/images/gallery2.jpg",
                 "background"
             );
