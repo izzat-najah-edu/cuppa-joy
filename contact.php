@@ -22,8 +22,8 @@ require_once "includes/component.php";
             <li>
                 <a href="#" class="logo">
                     <div class="images">
-                        <img src="./assets/images/icons/logo2.png" class="logo-forDark" title="Publius" alt="logo">
-                        <img src="./assets/images/icons/logo2.png" class="logo-forLight" title="Publius" alt="logo">
+                        <img src="assets/images/icons/logo.png" class="logo-forDark" title="Publius" alt="logo">
+                        <img src="assets/images/icons/logo.png" class="logo-forLight" title="Publius" alt="logo">
                     </div>
                     <h2>Cuppa Joy<span>.</span></h2>
                 </a>
