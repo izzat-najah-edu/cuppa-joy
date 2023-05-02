@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent">
             <i class="navbar-toggler-icon"></i>
