@@ -2,6 +2,10 @@
 
 /* General */
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary-color: #4e54c8;
     --primary-gradient: linear-gradient(225deg, #4e54c8, #8f94fb);
@@ -25,11 +29,6 @@ body {
 img {
     max-width: 100%;
     height: auto;
-}
-
-.bg-my-pattern {
-    background-image: url('../images/moroccan-flower.png');
-    background-repeat: repeat;
 }
 
 /* Header */
