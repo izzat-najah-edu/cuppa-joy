@@ -119,16 +119,9 @@ require_once "includes/component.php";
                     </form>
                 </div>
             </div>
-
             <div class="right">
                 <div class="image-wrapper">
-                    <img src="assets/images/background1.jpg" class="img" alt="icon">
-                </div>
-                <div class="wave-wrap">
-                    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" fill="none">
-                        <path id="wave" fill="#0099ff" fill-opacity="1"
-                              d="M0,96L30,90.7C60,85,120,75,180,80C240,85,300,107,360,133.3C420,160,480,192,540,192C600,192,660,160,720,165.3C780,171,840,213,900,229.3C960,245,1020,235,1080,202.7C1140,171,1200,117,1260,101.3C1320,85,1380,107,1410,117.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-                    </svg>
+                    <img src="assets/images/gallery/background1.jpg" class="img" alt="icon">
                 </div>
             </div>
         </div>
