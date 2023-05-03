@@ -8,6 +8,7 @@ html {
 
 :root {
     --primary-color: #4e54c8;
+    --yellow-color: #ffc107;
     --primary-gradient: linear-gradient(225deg, #4e54c8, #8f94fb);
 }
 
@@ -102,7 +103,7 @@ body, .bg-page {
 .footer-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ffc107;
+    color: var(--yellow-color);
     margin-bottom: 1rem;
 }
 
