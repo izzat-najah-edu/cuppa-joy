@@ -7,9 +7,10 @@ html {
 }
 
 :root {
-    --primary-color: #4e54c8;
+    --complementary-color: #a9e7ef;
+    --darker-comp-color: #4e54c8;
     --yellow-color: #ffc107;
-    --primary-gradient: linear-gradient(225deg, #4e54c8, #8f94fb);
+    --comp-gradient: linear-gradient(225deg, #4e54c8, #8f94fb);
 }
 
 body {
@@ -31,12 +32,8 @@ body, .bg-page {
     background-attachment: fixed;
 }
 
-.bg-main {
-    background-color: var(--primary-color);
-}
-
 .bg-gradient {
-    background-image: var(--primary-gradient);
+    background-image: var(--comp-gradient);
     background-size: cover;
     background-repeat: no-repeat;
 }
