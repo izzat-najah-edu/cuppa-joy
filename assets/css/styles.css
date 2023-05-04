@@ -74,10 +74,10 @@ img {
 }
 
 .image-overlay {
-    /* background-image needed */
     position: relative;
     width: 100%;
-    height: 40vh;
+    /* specific height needed */
+    /* background-image needed */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
