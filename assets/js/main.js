@@ -29,4 +29,3 @@ function setUpContactThemeToggle() {
 }
 
 setUpContactThemeToggle();
-document.body.classList.toggle("dark");
