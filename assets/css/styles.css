@@ -1,14 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
 
 /* General */
 
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
 html {
     scroll-behavior: smooth;
+    font-size: 125%;
 }
 
 :root {
     --skyblue-color: #a9e7ef;
     --cobalt-color: #4e54c8;
+    --brown-color: #4B3621;
     --yellow-color: #ffc107;
     --mango-color: #fcd358;
     --pink-color: #eeaac3;
@@ -17,8 +27,7 @@ html {
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 125%;
+    padding: 1rem;
 }
 
 img {
@@ -26,14 +35,7 @@ img {
     height: auto;
 }
 
-body, .bg-page {
-    background-image: url('../images/backgrounds/top-beans-background-cropped.png');
-    background-color: var(--cereal-color);
-    background-size: 100% auto;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+/* Extra styles */
 
 .bg-gradient {
     background-image: var(--cobalt-gradient);
@@ -48,12 +50,27 @@ body, .bg-page {
     background-attachment: fixed;
 }
 
-.font-fancy {
-    font-family: 'Playfair Display', serif;
+.font-normal {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    letter-spacing: normal;
 }
 
-.font-bold {
-    font-family: 'Abril Fatface', cursive;
+.font-bold, .font-title {
+    font-weight: 900;
+}
+
+.font-spread, .font-title {
+    letter-spacing: 0.7rem;
+}
+
+.font-title {
+    color: white;
+    text-shadow: black 0 0 1rem;
+}
+
+.font-bigger {
+    font-size: 150%;
 }
 
 /* Header */
