@@ -169,8 +169,8 @@
 .card:nth-child(4):hover,
 .card:nth-child(5):hover,
 .card:nth-child(6):hover {
-    background: var(--primary-gradient),
-    url('gallery/background1.jpg');
+    background: var(--cobalt-gradient),
+    url('../images/gallery/background1.jpg');
     background-size: cover;
 }
 
