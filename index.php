@@ -20,7 +20,7 @@ require_once "includes/component.php";
 </header>
 <main>
     <section class="mb-5">
-        <?php echo imageOverlay("assets/images/backgrounds/beans.jpg", "Cuppa Joy"); ?>
+        <?php echo imageOverlay("assets/images/backgrounds/beans.jpg", "CUPPA JOY"); ?>
         <div class="text-box">
             <p>Cuppa Joy is a cozy and welcoming coffee shop, dedicated to serving the finest coffee and
                 delicious treats, served by our expert baristas devoted to crafting the perfect cup with
@@ -28,14 +28,14 @@ require_once "includes/component.php";
         </div>
     </section>
     <section class="mb-5">
-        <?php echo imageOverlay("assets/images/backgrounds/shop.jpg", "Our Menu"); ?>
+        <?php echo imageOverlay("assets/images/backgrounds/shop.jpg", "SHOP NOW"); ?>
         <div class="text-box">
             <p>Experience the unique flavors of our Single Origin coffee, sourced from the
                 finest coffee-producing regions around the world.</p>
         </div>
     </section>
     <section class="mb-5">
-        <?php echo imageOverlay("assets/images/backgrounds/waitress2.jpg", "About Us") ?>
+        <?php echo imageOverlay("assets/images/backgrounds/waitress2.jpg", "FIND US") ?>
         <div class="text-box">
             <p>Our expert baristas are devoted to crafting each cup to perfection, with unwavering
                 attention to detail.
