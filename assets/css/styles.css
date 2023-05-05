@@ -152,6 +152,13 @@ nav * {
     margin-bottom: 1rem;
 }
 
+/* Fixes */
+
+.dropdown-item:active {
+    background-color: #343a40 !important; /* Bootstrap's dark color */
+    color: #ffffff !important;
+}
+
 /* Tweaks */
 
 @media (min-width: 1200px) {

@@ -65,7 +65,16 @@ function menuItem($image_url, $name, $price, $description): string {
             <div class="card-footer">
                 <div class="d-flex">
                     <p class="mx-auto font-bold">$price ILS</p>
-                    <button type="button" class="mx-auto btn btn-outline-dark">ADD TO CART</button>
+                    <div class="dropdown mx-auto">
+                        <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown">
+                            ADD TO CART
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">SMALL</a></li>
+                            <li><a class="dropdown-item" href="#">MEDIUM</a></li>
+                            <li><a class="dropdown-item" href="#">LARGE</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
