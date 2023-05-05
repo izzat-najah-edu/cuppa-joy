@@ -81,7 +81,7 @@ img {
 .image-overlay {
     position: relative;
     width: 100%;
-    /* specific height needed */
+    height: 60vh;
     /* background-image needed */
     background-size: cover;
     background-position: center center;
@@ -155,5 +155,11 @@ img {
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .image-overlay {
+        height: 40vh;
     }
 }
