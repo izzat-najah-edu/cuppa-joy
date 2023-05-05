@@ -25,15 +25,13 @@ $result = Database::getConnection()->query($query);
 <header>
     <?php renderNavbar() ?>
 </header>
-<main class="px-5">
-    <?php echo imageOverlay(
-        "assets/images/backgrounds/waitress.jpg", "Our Menu"
-    ); ?>
-    <hr>
-    <p class="lead text-center font-spread">
-        Discover our amazing coffee selection, carefully crafted to satisfy your taste buds.
-    </p>
-    <hr>
+<main>
+    <section class="mb-5">
+        <?php echo imageOverlay("assets/images/backgrounds/waitress.jpg", "Our Menu"); ?>
+        <div class="text-box text-center">
+            <p>Discover our amazing coffee selection, carefully crafted to satisfy your taste buds.</p>
+        </div>
+    </section>
     <section class="content-wrapper">
         <hr>
         <div class="menu-items menu-grid">

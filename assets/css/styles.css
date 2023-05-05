@@ -30,6 +30,11 @@ body {
     color: black;
 }
 
+main {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -65,7 +70,7 @@ img {
     font-weight: 900;
 }
 
-.font-spread, .font-title {
+.font-spread, .font-title, .text-box {
     letter-spacing: 0.4em;
 }
 
@@ -143,7 +148,7 @@ img {
 /* Tweaks */
 
 @media (min-width: 1200px) {
-    .max-width-1200 {
+    .max-width-1200, .text-box {
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
@@ -159,7 +164,17 @@ img {
 }
 
 @media (max-width: 1200px) {
+    main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .image-overlay {
         height: 40vh;
+    }
+
+    .text-box {
+        margin-left: 3rem;
+        margin-right: 3rem;
     }
 }
