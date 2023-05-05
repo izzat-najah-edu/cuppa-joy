@@ -1,5 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
+        <a class="navbar-brand" href="index">
+            <img class="img-fluid" src="assets/images/icons/logo_black.png" alt="Logo">
+        </a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent">
             <i class="navbar-toggler-icon"></i>
         </button>
