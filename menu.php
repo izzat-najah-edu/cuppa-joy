@@ -27,7 +27,7 @@ $result = Database::getConnection()->query($query);
 </header>
 <main>
     <section class="mb-5">
-        <?php echo imageOverlay("assets/images/backgrounds/waitress.jpg", "Our Menu"); ?>
+        <?php echo imageOverlay("assets/images/backgrounds/table.jpg", "Our Menu"); ?>
         <div class="text-box text-center">
             <p>Discover our amazing coffee selection, carefully crafted to satisfy your taste buds.</p>
         </div>
