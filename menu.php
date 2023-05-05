@@ -25,7 +25,7 @@ $result = Database::getConnection()->query($query);
 <header>
     <?php renderNavbar() ?>
 </header>
-<main class="p-5">
+<main class="px-5">
     <?php echo imageOverlay(
         "assets/images/backgrounds/waitress.jpg", "Our Menu"
     ); ?>
