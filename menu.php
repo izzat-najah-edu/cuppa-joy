@@ -32,6 +32,7 @@ $result = Database::getConnection()->query($query);
             <p>Discover our amazing coffee selection, carefully crafted to satisfy your taste buds.</p>
         </div>
     </section>
+    <hr>
     <section class="content-wrapper">
         <hr>
         <div class="menu-items menu-grid">
