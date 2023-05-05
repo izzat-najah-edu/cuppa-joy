@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,900&display=swap');
 
 /* General */
 
@@ -24,6 +24,10 @@ html {
     --pink-color: #eeaac3;
     --cereal-color: #efd5aa;
     --cobalt-gradient: linear-gradient(225deg, var(--cobalt-color), #8f94fb);
+}
+
+body {
+    color: black;
 }
 
 img {
@@ -52,15 +56,20 @@ img {
     letter-spacing: normal;
 }
 
+.font-fancy {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
 .font-bold, .font-title {
     font-weight: 900;
 }
 
 .font-spread, .font-title {
-    letter-spacing: 0.7rem;
+    letter-spacing: 0.4em;
 }
 
-.font-title {
+.font-reverse-color, .font-title {
     color: white;
     text-shadow: black 0 0 1rem;
 }
