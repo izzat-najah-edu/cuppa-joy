@@ -26,10 +26,6 @@ html {
     --cobalt-gradient: linear-gradient(225deg, var(--cobalt-color), #8f94fb);
 }
 
-body {
-    padding: 1rem;
-}
-
 img {
     max-width: 100%;
     height: auto;
