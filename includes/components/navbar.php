@@ -8,30 +8,22 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="index">
-                            <span class="display-6 d-inline-flex">
-                                <i class="bi bi-house"></i>Home
-                            </span>
+                    <h1>Home</h1>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="menu">
-                            <span class="display-6 d-inline-flex">
-                                <i class="bi bi-list"></i>Menu
-                            </span>
+                    <h1>Menu</h1>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about">
-                            <span class="display-6 d-inline-flex">
-                                <i class="bi bi-file-person"></i>About
-                            </span>
+                    <h1>About</h1>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contact">
-                            <span class="display-6 d-inline-flex">
-                                <i class="bi bi-headset"></i>Contact
-                            </span>
+                    <h1>Contact</h1>
                 </a>
             </li>
         </ul>

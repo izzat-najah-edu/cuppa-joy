@@ -103,10 +103,6 @@ nav * {
     font-family: var(--font-fancy);
 }
 
-.nav-link .d-inline-flex {
-    gap: 0.5rem;
-}
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
