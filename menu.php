@@ -28,12 +28,13 @@ $result = Database::getConnection()->query($query);
 <main>
     <section class="mb-5">
         <?php echo imageOverlay("assets/images/backgrounds/table.jpg", "MENU"); ?>
+        <hr>
         <div class="text-box text-center">
             <p class="font-bigger">
                 Discover our amazing coffee selection, carefully crafted to satisfy your taste buds.</p>
         </div>
+        <hr>
     </section>
-    <hr class="mb-5">
     <section class="content-wrapper">
         <div class="menu-items menu-grid">
             <?php
@@ -55,7 +56,7 @@ function createCard($image_url, $name, $description): string {
     return <<<CARD
         <div class="card menu-item">
             <img class="card-img-top" src="assets/$image_url" alt="$name">
-            <div class="card-body">
+            <div class="card-body font-glow">
                 <h3 class="card-title text-center font-fancy">$name</h3>
                 <hr>
                 <p class="card-text">$description</p>
