@@ -64,7 +64,9 @@ function menuItem($image_url, $name, $price, $description): string {
             </div>
             <div class="card-footer">
                 <div class="d-flex">
-                    <p class="mx-auto font-bold">$price ILS</p>
+                    <div class="mx-auto">
+                        <p class="font-bold text-decoration">$price ILS</p>
+                    </div>
                     <div class="dropdown mx-auto">
                         <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown">
                             ADD TO CART
