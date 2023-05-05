@@ -41,7 +41,7 @@ $result = Database::getConnection()->query($query);
             // Generate all coffee figures from the database:
             for ($i = 0; $i < $result->num_rows; $i++) {
                 $row = $result->fetch_object();
-                echo createCard($row->image_url, $row->name, $row->price, $row->description);
+                echo menuItem($row->image_url, $row->name, $row->price, $row->description);
             }
             ?>
         </div>
@@ -52,7 +52,7 @@ $result = Database::getConnection()->query($query);
 </html>
 <?php
 
-function createCard($image_url, $name, $price, $description): string {
+function menuItem($image_url, $name, $price, $description): string {
     return <<<CARD
         <div class="card menu-item">
             <img class="card-img-top" src="assets/$image_url" alt="$name">
