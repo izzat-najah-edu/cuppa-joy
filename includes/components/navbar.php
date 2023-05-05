@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-xl navbar-light px-5">
     <div class="container-fluid">
         <a class="navbar-brand" href="index">
             <img class="img-fluid" src="assets/images/icons/logo_black.png" alt="Logo">
