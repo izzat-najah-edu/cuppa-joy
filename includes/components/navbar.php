@@ -36,7 +36,7 @@
                 <a class="mx-2" href="#">
                     <img src="assets/images/icons/theme_black.png" alt="Theme" width="25px" height="25px">
                 </a>
-                <a class="mx-2" href="#">
+                <a class="mx-2" href="cart">
                     <img src="assets/images/icons/cart_black.png" alt="Cart" width="25px" height="25px">
                 </a>
             </div>
