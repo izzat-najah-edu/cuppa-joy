@@ -6,7 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: var(--font-normal);
     font-weight: 400;
 }
 
@@ -24,6 +24,9 @@ html {
     --pink-color: #eeaac3;
     --cereal-color: #efd5aa;
     --cobalt-gradient: linear-gradient(225deg, var(--cobalt-color), #8f94fb);
+
+    --font-normal: 'Source Sans Pro', sans-serif;
+    --font-fancy: 'Dancing Script', cursive;
 }
 
 body {
@@ -56,13 +59,13 @@ img {
 }
 
 .font-normal {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: var(--font-normal);
     font-weight: 400;
     letter-spacing: normal;
 }
 
 .font-fancy {
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--font-fancy);
     font-weight: 700;
 }
 
@@ -95,6 +98,10 @@ img {
 }
 
 /* Navbar */
+
+nav * {
+    font-family: var(--font-fancy);
+}
 
 .nav-link .d-inline-flex {
     gap: 0.5rem;
