@@ -25,10 +25,18 @@ $result = Database::getConnection()->query($query);
 <header>
     <?php renderNavbar() ?>
 </header>
-<main>
-    <div class="content-wrapper">
-        <h2>Our Menu</h2>
-        <div class="menu-items">
+<main class="p-5">
+    <?php echo imageOverlay(
+        "assets/images/backgrounds/pexels-burst-374885.jpg", "Our Menu"
+    ); ?>
+    <hr>
+    <p class="lead text-center font-spread">
+        Discover our amazing coffee selection, carefully crafted to satisfy your taste buds.
+    </p>
+    <hr>
+    <section class="content-wrapper">
+        <hr>
+        <div class="menu-items menu-grid">
             <?php
             // Generate all coffee figures from the database:
             for ($i = 0; $i < $result->num_rows; $i++) {
@@ -37,7 +45,7 @@ $result = Database::getConnection()->query($query);
             }
             ?>
         </div>
-    </div>
+    </section>
 </main>
 <?php renderFooter() ?>
 </body>
@@ -49,7 +57,8 @@ function createCard($image_url, $name, $description): string {
         <div class="card menu-item">
             <img class="card-img-top" src="assets/$image_url" alt="$name">
             <div class="card-body">
-                <h3 class="card-title">$name</h3>
+                <h3 class="card-title text-center font-fancy">$name</h3>
+                <hr>
                 <p class="card-text">$description</p>
             </div>
         </div>
