@@ -27,7 +27,7 @@ $result = Database::getConnection()->query($query);
 </header>
 <main class="p-5">
     <?php echo imageOverlay(
-        "assets/images/backgrounds/pexels-burst-374885.jpg", "Our Menu"
+        "assets/images/backgrounds/waitress.jpg", "Our Menu"
     ); ?>
     <hr>
     <p class="lead text-center font-spread">
