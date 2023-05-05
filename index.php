@@ -19,71 +19,30 @@ require_once "includes/component.php";
     <?php renderNavbar() ?>
 </header>
 <main>
-    <div class="card max-width-400 bg-transparent border-0 text-light text-center">
-        <img class="card-img-top" src="assets/images/icons/logo_animated.gif" alt="Logo">
-        <div class="card-body">
-            <h2 class="card-title display-2">Cuppa Joy</h2>
-            <hr>
-            <p class="card-text">Your Home Away from Home for the Finest Coffee Experience</p>
+    <section class="mb-5">
+        <?php echo imageOverlay("assets/images/backgrounds/beans.jpg", "Cuppa Joy"); ?>
+        <div class="text-box">
+            <p>Cuppa Joy is a cozy and welcoming coffee shop, dedicated to serving the finest coffee and
+                delicious treats, served by our expert baristas devoted to crafting the perfect cup with
+                exceptional attention to detail.</p>
         </div>
-    </div>
-    <div>
-        <div class="p-5 container-fluid max-width-1200 bg-light rounded-3">
-            <?php
-            echo createSection(
-                "Welcome to Cuppa Joy!",
-                "Discover the best coffee experience with our finest selection of beans and exceptional brewing techniques.",
-                "Explore Our Menu",
-                "menu",
-                "assets/images/background2.jpg",
-                "background"
-            );
-            echo createSection(
-                "About Us",
-                "At Cuppa Joy, our passion is to provide the finest coffee experience by sourcing the best beans and employing expert baristas. We believe that every cup of coffee should be a moment of joy and relaxation.",
-                "",
-                "",
-                "assets/images/background1.jpg",
-                "background"
-            );
-            echo createSection(
-                "Join Our Loyalty Program",
-                "Become a member of the Cuppa Joy family and enjoy exclusive perks, discounts, and more!",
-                "Register Now",
-                "contact",
-                "assets/images/gallery3.jpg",
-                "background"
-            );
-            echo createSection(
-                "Contact Us",
-                "Have questions or feedback? We'd love to hear from you! Get in touch with us through our contact form or social media channels.",
-                "Contact Form",
-                "contact",
-                "assets/images/gallery2.jpg",
-                "background"
-            );
-            ?>
+    </section>
+    <section class="mb-5">
+        <?php echo imageOverlay("assets/images/backgrounds/shop.jpg", "Our Menu"); ?>
+        <div class="text-box">
+            <p>Experience the unique flavors of our Single Origin coffee, sourced from the
+                finest coffee-producing regions around the world.</p>
         </div>
+    </section>
+    <section class="mb-5">
+        <?php echo imageOverlay("assets/images/backgrounds/waitress2.jpg", "About Us") ?>
+        <div class="text-box">
+            <p>Our expert baristas are devoted to crafting each cup to perfection, with unwavering
+                attention to detail.
+            </p>
+        </div>
+    </section>
 </main>
 <?php renderFooter() ?>
 </body>
 </html>
-<?php
-
-function createSection($title, $description, $buttonText, $buttonLink, $imageSrc, $altText): string {
-    return <<<SECTION
-        <section>
-            <div class="card">
-                <div class="card-body">
-                    <h2>$title</h2>
-                    <p>$description</p>
-                    <a href="$buttonLink" class="button">$buttonText</a>
-                </div>
-                <img class="card-img-bottom" src="$imageSrc" alt="$altText">
-            </div>
-        </section>
-        <hr>
-    SECTION;
-}
-
-?>
