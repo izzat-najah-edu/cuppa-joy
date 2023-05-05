@@ -17,3 +17,11 @@ function imageOverlay($backgroundImageURL, $title, $height = "60vh", $content = 
         </div>
     OVERLAY;
 }
+
+function textBox($content): string {
+    return <<<BOX
+        <div class="max-width-1200">
+            <p class="font-spread">$content</p>
+        </div>
+    BOX;
+}
