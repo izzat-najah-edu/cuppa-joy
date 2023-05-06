@@ -128,6 +128,39 @@ require_once "includes/component.php";
     </section>
 </main>
 <?php renderFooter() ?>
+<script>
+    function setUpContactThemeToggle() {
+        const inputs = document.querySelectorAll('.contact-input');
+        const toggleBtn = document.querySelector(".theme-toggle");
+        const allElements = document.querySelectorAll("*");
+
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            // toggleBtn.classList.toggle("bx-sun");
+            allElements.forEach((el) => {
+                el.classList.add("transition");
+                setTimeout(() => {
+                    el.classList.remove("transition");
+                }, 1000);
+            });
+        });
+
+        inputs.forEach((ipt) => {
+            ipt.addEventListener('focus', () => {
+                ipt.parentNode.classList.add("focus");
+                ipt.parentNode.classList.add("not-empty");
+            });
+            ipt.addEventListener('blur', () => {
+                if (ipt.value === "") {
+                    ipt.parentNode.classList.remove("not-empty");
+                }
+                ipt.parentNode.classList.remove("focus");
+            });
+        })
+    }
+
+    setUpContactThemeToggle();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
         integrity="sha384-Y7LSKwoY+C2iyfu/oupNnkGEN3EgA6skmJeVg5AyQk7ttcjX0XsLREmmuJW/SdbU"
         crossorigin="anonymous"></script>
