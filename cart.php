@@ -22,7 +22,36 @@ require_once "includes/component.php";
     <section class="mb-5">
         <?php echo imageOverlay("assets/images/backgrounds/machine2.jpg", "CART"); ?>
     </section>
-    <hr>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h4>Cart Items</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <!-- List cart items here -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Order Summary</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Subtotal: <span id="subtotal"></span></p>
+                        <p>Tax: <span id="tax"></span></p>
+                        <hr>
+                        <p>Total: <span id="total"></span></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-warning w-100">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 <?php renderFooter() ?>
 </body>
