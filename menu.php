@@ -98,7 +98,7 @@ function menuItem($id, $image_url, $name, $price, $description): string {
                         <p class="font-bold text-decoration">$price ILS</p>
                     </div>
                     <div class="dropdown mx-auto">
-                        <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
                             ADD TO CART
                         </button>
                         <ul class="dropdown-menu">
