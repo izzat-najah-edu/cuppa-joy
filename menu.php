@@ -2,11 +2,6 @@
 
 require_once "includes/component.php";
 require_once "includes/config.php";
-
-use Database;
-
-$query = "select * from coffee";
-$result = Database::getConnection()->query($query);
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,6 +40,8 @@ $result = Database::getConnection()->query($query);
         <div class="menu-items menu-grid">
             <?php
             // Generate all coffee figures from the database:
+            $query = "select * from coffee";
+            $result = getDatabaseConnection()->query($query);
             for ($i = 0; $i < $result->num_rows; $i++) {
                 $row = $result->fetch_object();
                 echo menuItem($row->id, $row->image_url, $row->name, $row->price, $row->description);
