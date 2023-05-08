@@ -19,9 +19,3 @@ class Database {
         return self::$connection;
     }
 }
-
-session_start();
-
-if (!isset($_SESSION["cart"])) {
-    $_SESSION["cart"] = array();
-}

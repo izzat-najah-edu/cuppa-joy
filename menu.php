@@ -5,29 +5,8 @@ require_once "includes/config.php";
 
 use Database;
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $id = $_POST["id"];
-    $size = $_POST["size"];
-
-    if (!isset($_SESSION["cart"][$id])) {
-        $_SESSION["cart"][$id] = array();
-    }
-
-    if (!isset($_SESSION["cart"][$id][$size])) {
-        $_SESSION["cart"][$id][$size] = array(
-            "quantity" => 0
-        );
-    }
-
-    $_SESSION["cart"][$id][$size]["quantity"]++;
-
-    echo json_encode(array(
-            "success" => true,
-            "id" => $id,
-            "size" => $size,
-            "quantity" => $_SESSION["cart"][$id][$size]["quantity"])
-    );
-}
+$query = "select * from coffee";
+$result = Database::getConnection()->query($query);
 ?>
 <!doctype html>
 <html lang="en">
@@ -63,8 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="menu-items menu-grid">
             <?php
             // Generate all coffee figures from the database:
-            $query = "select * from coffee";
-            $result = Database::getConnection()->query($query);
             for ($i = 0; $i < $result->num_rows; $i++) {
                 $row = $result->fetch_object();
                 echo menuItem($row->id, $row->image_url, $row->name, $row->price, $row->description);
@@ -93,7 +70,7 @@ function menuItem($id, $image_url, $name, $price, $description): string {
                     <div class="mx-auto">
                         <p class="font-bold text-decoration">$price ILS</p>
                     </div>
-                    <form action="menu.php" method="post">
+                    <form action="actions/add_to_cart.php" method="post">
                         <input type="hidden" name="id" value="$id">
                         <div class="dropdown mx-auto">
                             <ul class="dropdown-menu">
