@@ -33,20 +33,32 @@ require_once "includes/config.php";
                         <h4>Cart Items</h4>
                     </div>
                     <div class="cart-body">
-                        <ul class="list-group list-group-flush">
+                        <table class="table">
+                            <tr>
+                                <th>Item</th>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
                             <?php
                             foreach ($_SESSION["cart"] as $id => $sizes) {
                                 $coffee = Database::getInstance()->getCoffee(strval($id))->fetch_object();
                                 foreach ($sizes as $size => $properties) {
-                                    echo <<<LI
-                                    <li class="list-group-item">
-                                        $coffee->name - $size - {$properties["quantity"]}
-                                    </li>
-                                    LI;
+                                    $size = ucfirst($size);
+                                    echo <<<ROW
+                                        <tr>
+                                            <td><img src="assets/$coffee->image_url" alt="$coffee->name" width="50px">$coffee->name</td>
+                                            <td>$size</td>
+                                            <td>$coffee->price</td>
+                                            <td>{$properties["quantity"]}</td>
+                                            <td></td>
+                                        </tr>
+                                    ROW;
                                 }
                             }
                             ?>
-                        </ul>
+                        </table>
                     </div>
                 </div>
             </div>
