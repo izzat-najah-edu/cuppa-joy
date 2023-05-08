@@ -10,22 +10,22 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="index">
-                        <h1>Home</h1>
+                        <h3>Home</h3>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu">
-                        <h1>Menu</h1>
+                        <h3>Menu</h3>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about">
-                        <h1>About</h1>
+                        <h3>About</h3>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact">
-                        <h1>Contact</h1>
+                        <h3>Contact</h3>
                     </a>
                 </li>
             </ul>
