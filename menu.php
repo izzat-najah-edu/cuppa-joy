@@ -3,7 +3,7 @@
 use Database;
 
 require_once "includes/component.php";
-require_once "includes/config.php";
+require_once "includes/configuration.php";
 ?>
 <!doctype html>
 <html lang="en">
