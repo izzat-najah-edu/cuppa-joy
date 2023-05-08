@@ -24,9 +24,9 @@ require_once "includes/configuration.php";
 </header>
 <main>
     <?php
-    if (isset($_SESSION["message"])) {
-        echo alert($_SESSION["message"]);
-        unset($_SESSION["message"]);
+    if (isset($_SESSION["item_added_message"])) {
+        echo alert($_SESSION["item_added_message"]);
+        unset($_SESSION["item_added_message"]);
     }
     ?>
     <section class="mb-5">
