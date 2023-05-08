@@ -35,9 +35,9 @@ require_once "includes/config.php";
                     <div class="cart-body">
                         <ul class="list-group list-group-flush">
                             <?php
-                            foreach ($_SESSION["cart"] as $id => $item) {
+                            foreach ($_SESSION["cart"] as $id => $sizes) {
                                 $coffee = Database::getInstance()->getCoffee(strval($id))->fetch_object();
-                                foreach ($item as $size => $properties) {
+                                foreach ($sizes as $size => $properties) {
                                     echo <<<LI
                                     <li class="list-group-item">
                                         $coffee->name - $size - {$properties["quantity"]}
