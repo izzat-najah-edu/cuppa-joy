@@ -3,7 +3,7 @@
 use Database;
 
 require_once "includes/component.php";
-require_once "includes/database.php";
+require_once "includes/config.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,9 +32,22 @@ require_once "includes/database.php";
                     <div class="card-header">
                         <h4>Cart Items</h4>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <!-- List cart items here -->
-                    </ul>
+                    <div class="cart-body">
+                        <ul class="list-group list-group-flush">
+                            <?php
+                            foreach ($_SESSION["cart"] as $id => $item) {
+                                $coffee = Database::getInstance()->getCoffee(strval($id))->fetch_object();
+                                foreach ($item as $size => $properties) {
+                                    echo <<<LI
+                                    <li class="list-group-item">
+                                        $coffee->name - $size - {$properties["quantity"]}
+                                    </li>
+                                    LI;
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
