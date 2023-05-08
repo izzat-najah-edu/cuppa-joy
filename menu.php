@@ -26,9 +26,12 @@ $result = Database::getConnection()->query($query);
     <?php renderNavbar() ?>
 </header>
 <main>
-    <div id="alertPlaceholder">
-
-    </div>
+    <?php
+    if (isset($_SESSION["message"])) {
+        echo alert("Success!", $_SESSION["message"]);
+        unset($_SESSION["message"]);
+    }
+    ?>
     <section class="mb-5">
         <?php echo imageOverlay("assets/images/backgrounds/table.jpg", "MENU"); ?>
         <hr>

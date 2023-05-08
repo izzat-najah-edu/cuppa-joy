@@ -17,3 +17,12 @@ function imageOverlay($backgroundImageURL, $title, $content = ""): string {
         </div>
     OVERLAY;
 }
+
+function alert($strong, $message): string {
+    return <<<ALERT
+        <div class="alert alert-warning alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>$strong</strong>$message
+        </div>
+    ALERT;
+}
