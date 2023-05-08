@@ -47,14 +47,15 @@ require_once "includes/config.php";
                                 foreach ($sizes as $size => $properties) {
                                     $size = ucfirst($size);
                                     echo <<<ROW
-                                        <tr>
-                                            <td><img src="assets/$coffee->image_url" alt="$coffee->name" width="50px">$coffee->name</td>
-                                            <td>$size</td>
-                                            <td>$coffee->price</td>
-                                            <td>{$properties["quantity"]}</td>
-                                            <td></td>
-                                        </tr>
-                                    ROW;
+                            <tr>
+                                <td><img src="assets/$coffee->image_url" alt="$coffee->name" width="50px">
+                                    $coffee->name</td>
+                                <td>$size</td>
+                                <td>$coffee->price</td>
+                                <td>{$properties["quantity"]}</td>
+                                <td></td>
+                            </tr>
+                        ROW;
                                 }
                             }
                             ?>
