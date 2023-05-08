@@ -10,6 +10,12 @@ CREATE TABLE coffee
     image_url   VARCHAR(255)
 );
 
+CREATE TABLE subscribers
+(
+    id    INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL
+);
+
 CREATE TABLE messages
 (
     id         INT AUTO_INCREMENT PRIMARY KEY,
@@ -21,12 +27,6 @@ CREATE TABLE messages
 );
 
 -- Might be added later
-
-CREATE TABLE subscribers
-(
-    id    INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) UNIQUE NOT NULL
-);
 
 CREATE TABLE members
 (
