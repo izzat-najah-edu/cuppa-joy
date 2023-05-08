@@ -25,7 +25,7 @@ require_once "includes/configuration.php";
 <main>
     <?php
     if (isset($_SESSION["message"])) {
-        echo alert("Success!", $_SESSION["message"]);
+        echo alert($_SESSION["message"]);
         unset($_SESSION["message"]);
     }
     ?>
