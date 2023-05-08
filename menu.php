@@ -3,7 +3,7 @@
 use Database;
 
 require_once "includes/component.php";
-require_once "includes/configuration.php";
+require_once "includes/database.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,8 +42,7 @@ require_once "includes/configuration.php";
         <div class="menu-items menu-grid">
             <?php
             // Generate all coffee figures from the database:
-            $query = "select * from coffee";
-            $result = Database::getConnection()->query($query);
+            $result = Database::getInstance()->getAllCoffee();
             for ($i = 0; $i < $result->num_rows; $i++) {
                 $row = $result->fetch_object();
                 echo menuItem($row->id, $row->image_url, $row->name, $row->price, $row->description);
