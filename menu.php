@@ -45,39 +45,30 @@ require_once "includes/config.php";
             $result = Database::getInstance()->getAllCoffee();
             for ($i = 0; $i < $result->num_rows; $i++) {
                 $row = $result->fetch_object();
-                echo menuItem($row->id, $row->image_url, $row->name, $row->price, $row->description);
-            }
-            ?>
-        </div>
-    </section>
-</main>
-<?php renderFooter() ?>
-</body>
-</html>
-<?php
-
-function menuItem($id, $image_url, $name, $price, $description): string {
-    return <<<CARD
+                echo <<<CARD
         <div class="card menu-item">
-            <img class="card-img-top" src="assets/$image_url" alt="$name">
+            <img class="card-img-top" src="assets/$row->image_url" alt="$row->name">
             <div class="card-header font-glow">
-                <h3 class="card-title text-center font-fancy">$name</h3>
+                <h3 class="card-title text-center font-fancy">$row->name</h3>
             </div>
             <div class="card-body">
-                <p class="card-text">$description</p>
+                <p class="card-text">$row->description</p>
             </div>
             <div class="card-footer">
                 <div class="d-flex">
                     <div class="mx-auto">
-                        <p class="font-bold text-decoration">$price ILS</p>
+                        <p class="font-bold text-decoration">$row->price ILS</p>
                     </div>
                     <form action="actions/add_to_cart.php" method="post">
-                        <input type="hidden" name="id" value="$id">
+                        <input type="hidden" name="id" value="$row->id">
                         <div class="dropdown mx-auto">
                             <ul class="dropdown-menu">
-                                <li><label class="dropdown-item"><input type="submit" name="size" value="s" style="display:none;">SMALL</label></li>
-                                <li><label class="dropdown-item"><input type="submit" name="size" value="m" style="display:none;">MEDIUM</label></li>
-                                <li><label class="dropdown-item"><input type="submit" name="size" value="l" style="display:none;">LARGE</label></li>
+                                <li><label class="dropdown-item">
+                                    <input type="submit" name="size" value="s" style="display:none;">SMALL</label></li>
+                                <li><label class="dropdown-item">
+                                    <input type="submit" name="size" value="m" style="display:none;">MEDIUM</label></li>
+                                <li><label class="dropdown-item">
+                                    <input type="submit" name="size" value="l" style="display:none;">LARGE</label></li>
                             </ul>
                             <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
                                 ADD TO CART
@@ -88,6 +79,11 @@ function menuItem($id, $image_url, $name, $price, $description): string {
             </div>
         </div>
     CARD;
-}
-
-?>
+            }
+            ?>
+        </div>
+    </section>
+</main>
+<?php renderFooter() ?>
+</body>
+</html>
