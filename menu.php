@@ -5,8 +5,29 @@ require_once "includes/config.php";
 
 use Database;
 
-$query = "select * from coffee";
-$result = Database::getConnection()->query($query);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $id = $_POST["id"];
+    $size = $_POST["size"];
+
+    if (!isset($_SESSION["cart"][$id])) {
+        $_SESSION["cart"][$id] = array();
+    }
+
+    if (!isset($_SESSION["cart"][$id][$size])) {
+        $_SESSION["cart"][$id][$size] = array(
+            "quantity" => 0
+        );
+    }
+
+    $_SESSION["cart"][$id][$size]["quantity"]++;
+
+    echo json_encode(array(
+            "success" => true,
+            "id" => $id,
+            "size" => $size,
+            "quantity" => $_SESSION["cart"][$id][$size]["quantity"])
+    );
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,6 +63,8 @@ $result = Database::getConnection()->query($query);
         <div class="menu-items menu-grid">
             <?php
             // Generate all coffee figures from the database:
+            $query = "select * from coffee";
+            $result = Database::getConnection()->query($query);
             for ($i = 0; $i < $result->num_rows; $i++) {
                 $row = $result->fetch_object();
                 echo menuItem($row->id, $row->image_url, $row->name, $row->price, $row->description);
@@ -51,33 +74,6 @@ $result = Database::getConnection()->query($query);
     </section>
 </main>
 <?php renderFooter() ?>
-<script>
-    document.addEventListener('DOMContentLoaded', function initializeCart() {
-        if (!getCookie("cart")) {
-            setCookie("cart", JSON.stringify({}));
-        }
-    });
-
-    function incrementOrCreateMenuItem(id, size) {
-        const cart = JSON.parse(getCookie("cart"));
-        const key = `${id}_${size}`;
-        if (cart[key]) {
-            cart[key].quantity++;
-        } else {
-            cart[key] = {quantity: 1};
-        }
-        setCookie("cart", JSON.stringify(cart), 1);
-    }
-
-    function renderAlert(message) {
-        alert(message);
-    }
-
-    function addToCart(id, size) {
-        incrementOrCreateMenuItem(id, size);
-        renderAlert(`Item Number: ${id} Size:${size}. Added to cart successfully!`);
-    }
-</script>
 </body>
 </html>
 <?php
@@ -97,16 +93,19 @@ function menuItem($id, $image_url, $name, $price, $description): string {
                     <div class="mx-auto">
                         <p class="font-bold text-decoration">$price ILS</p>
                     </div>
-                    <div class="dropdown mx-auto">
-                        <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
-                            ADD TO CART
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="addToCart('$id', 's')">SMALL</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="addToCart('$id', 'm')">MEDIUM</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="addToCart('$id', 'l')">LARGE</a></li>
-                        </ul>
-                    </div>
+                    <form action="menu.php" method="post">
+                        <input type="hidden" name="id" value="$id">
+                        <div class="dropdown mx-auto">
+                            <ul class="dropdown-menu">
+                                <li><label class="dropdown-item"><input type="submit" name="size" value="s" style="display:none;">SMALL</label></li>
+                                <li><label class="dropdown-item"><input type="submit" name="size" value="m" style="display:none;">MEDIUM</label></li>
+                                <li><label class="dropdown-item"><input type="submit" name="size" value="l" style="display:none;">LARGE</label></li>
+                            </ul>
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
+                                ADD TO CART
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
