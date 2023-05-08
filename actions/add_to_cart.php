@@ -23,7 +23,7 @@ if (!isset($_SESSION["cart"][$id][$size])) {
 }
 
 $_SESSION["cart"][$id][$size]["quantity"]++;
-
 $_SESSION["message"] = "Item added to cart successfully!";
+
 header("Location: ../menu");
 exit;
