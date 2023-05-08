@@ -1,6 +1,9 @@
 <?php namespace html;
 
+use Database;
+
 require_once "includes/component.php";
+require_once "includes/database.php";
 ?>
 <!doctype html>
 <html lang="en">
