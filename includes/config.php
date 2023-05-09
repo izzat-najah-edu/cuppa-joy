@@ -10,6 +10,7 @@ class Database {
 
     private mysqli $connection;
     private mysqli_stmt $coffee_query;
+    private mysqli_stmt $message_insert;
 
     public static function getInstance(): Database {
         if (!isset(self::$instance)) {
@@ -32,6 +33,9 @@ class Database {
             $this->coffee_query = $this->connection->prepare(
                 "select * from coffee where id=?"
             );
+            $this->message_insert = $this->connection->prepare(
+                "insert into messages (first_name, last_name, email, message) values (?,?,?,?)"
+            );
         } catch (mysqli_sql_exception $e) {
             echo 'Database Error: ' . $e->getMessage();
             die();
@@ -51,5 +55,11 @@ class Database {
 
     public function getAllCoffee(): mysqli_result|bool {
         return $this->connection->query("SELECT * FROM coffee");
+    }
+
+    public function createMessage($fname, $lname, $email, $message): bool {
+        return $this->message_insert->bind_param(
+            "ssss", $fname, $lname, $email, $message
+        );
     }
 }
