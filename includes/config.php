@@ -57,7 +57,7 @@ class Database {
         return $this->connection->query("SELECT * FROM coffee");
     }
 
-    public function createMessage($firstName, $lastName, $email, $message): bool {
+    public function createMessage(string $firstName, string $lastName, string $email, string $message): bool {
         $this->message_insert->bind_param(
             "ssss", $firstName, $lastName, $email, $message
         );

@@ -8,7 +8,7 @@ function renderFooter(): void {
     require_once "components/footer.php";
 }
 
-function imageOverlay($backgroundImageURL, $title, $content = ""): string {
+function imageOverlay(string $backgroundImageURL, string $title, string $content = ""): string {
     return <<<OVERLAY
         <div class="image-overlay d-flex align-items-center justify-content-center text-center mb-5"
              style="background-image: url($backgroundImageURL);">
@@ -18,7 +18,7 @@ function imageOverlay($backgroundImageURL, $title, $content = ""): string {
     OVERLAY;
 }
 
-function alert($message, $strong = ""): string {
+function alert(string $message, string $strong = ""): string {
     return <<<ALERT
         <div class="alert alert-warning alert-dismissible">
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
