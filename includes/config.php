@@ -57,9 +57,10 @@ class Database {
         return $this->connection->query("SELECT * FROM coffee");
     }
 
-    public function createMessage($fname, $lname, $email, $message): bool {
-        return $this->message_insert->bind_param(
-            "ssss", $fname, $lname, $email, $message
+    public function createMessage($firstName, $lastName, $email, $message): bool {
+        $this->message_insert->bind_param(
+            "ssss", $firstName, $lastName, $email, $message
         );
+        return $this->message_insert->execute();
     }
 }
