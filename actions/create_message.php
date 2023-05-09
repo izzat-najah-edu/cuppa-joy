@@ -7,16 +7,15 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-try {
-    Database::getInstance()->createMessage(
-        $_POST["first-name"],
-        $_POST["last-name"],
-        $_POST["email"],
-        $_POST["message"]
-    );
+if (Database::getInstance()->createMessage(
+    $_POST["first-name"],
+    $_POST["last-name"],
+    $_POST["email"],
+    $_POST["message"]
+)) {
     $_SESSION["message_created_message"] = "Your message has been sent successfully!";
-} catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+} else {
+    $_SESSION["message_created_message"] = "Message could not be created!";
 }
 
 header("Location: ../contact");
