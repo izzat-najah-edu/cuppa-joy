@@ -1,5 +1,7 @@
 <?php namespace html;
 
+session_start();
+
 require_once "includes/component.php";
 ?>
 <!doctype html>
@@ -52,7 +54,7 @@ require_once "includes/component.php";
                         <h1>Lets work together <span>.</span></h1>
                         <p class="text">or reach us viz : <a href="mailto:sualiman@gmail.com">sualiman@gmail.com</a></p>
                     </div>
-                    <form action="contact.php" method="post" class="contact-form">
+                    <form action="actions/create_message.php" method="post" class="contact-form">
                         <div class="input-wrap">
                             <input class="contact-input" autocomplete="off" name="first-name" type="text" required>
                             <label>First Name</label>
@@ -87,33 +89,9 @@ require_once "includes/component.php";
                             <input type="submit" value="Send massage" class="btn">
                         </div>
                         <?php
-                        // Check if this page was reached by submitting the contact form
-
-                        $fn = $_POST['first-name'] ?? null;
-                        $ln = $_POST['last-name'] ?? null;
-                        $email = $_POST['email'] ?? null;
-                        $message = $_POST['message'] ?? null;
-
-                        if (isset($fn) and isset($ln) and isset($email) and isset($message)) {
-                            if (isset($dbConnection)) {
-
-                                // Insert message into database:
-
-                                $statement = $dbConnection->prepare(
-                                    "insert into messages (first_name, last_name, email, message) values (?,?,?,?)"
-                                );
-                                $statement->bind_param(
-                                    "ssss", $fn, $ln, $email, $message
-                                );
-                                if ($statement->execute()) {
-                                    ?>
-                                    <div class="alert alert-success">
-                                        <strong>Success!</strong> you message has been sent to us!
-                                    </div>
-                                    <?php
-                                }
-                                $statement->close();
-                            }
+                        if (isset($_SESSION["message_created_message"])) {
+                            echo alert($_SESSION["message_created_message"]);
+                            unset($_SESSION["message_created_message"]);
                         }
                         ?>
                     </form>
