@@ -23,7 +23,7 @@ function showModal(modal) {
     new bootstrap.Modal(modal, {}).show();
 }
 
-function triggerModalOnLoad(xhr, modal) {
+function triggerOnLoad(xhr, modal) {
     if (xhr.status !== 200) {
         console.log("Request failed");
         return;

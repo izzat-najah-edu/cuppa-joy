@@ -111,7 +111,7 @@ require_once "includes/config.php";
         let xhr = new XMLHttpRequest();
         xhr.open("post", "actions/add_to_cart.php", true);
         xhr.onload = function () {
-            triggerModalOnLoad(this, document.getElementById("modalItemAdded"));
+            triggerOnLoad(this, document.getElementById("modalItemAdded"));
         }
         xhr.send(new FormData(addItemForm));
     }

@@ -126,7 +126,7 @@ require_once "includes/component.php";
         let xhr = new XMLHttpRequest();
         xhr.open("post", "actions/create_message.php", true);
         xhr.onload = function () {
-            triggerModalOnLoad(this, document.getElementById("modalMessageCreated"));
+            triggerOnLoad(this, document.getElementById("modalMessageCreated"));
         }
         xhr.send(new FormData(messageForm));
     }
