@@ -104,7 +104,7 @@ require_once "includes/config.php";
         form.addEventListener("submit", function (event) {
             event.preventDefault();
             addToCart(this, document.getElementById("modalItemAdded"));
-        })
+        });
     })
 </script>
 </body>
