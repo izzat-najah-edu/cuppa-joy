@@ -53,7 +53,7 @@ require_once "includes/config.php";
                         <div class="mx-auto">
                             <p class="font-bold text-decoration">$row->price ILS</p>
                         </div>
-                        <form class="add-to-cart-form" method="post">
+                        <form class="add-item-form" method="post">
                             <input type="hidden" name="id" value="$row->id">
                             <div class="dropdown mx-auto">
                                 <ul class="dropdown-menu">
@@ -100,30 +100,12 @@ require_once "includes/config.php";
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script>
-    document.querySelectorAll(".add-to-cart-form").forEach(function (form) {
+    document.querySelectorAll(".add-item-form").forEach(function (form) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
-            addToCart(this);
+            addToCart(this, document.getElementById("modalItemAdded"));
         })
     })
-
-    function addToCart(form) {
-        let xhr = new XMLHttpRequest();
-        xhr.open("post", "actions/add_to_cart.php", true);
-        xhr.onload = function () {
-            if (this.status !== 200) {
-                console.log("Request failed");
-                return;
-            }
-            let result = JSON.parse(this.responseText);
-            if (!result.success) {
-                console.log(result.message);
-                return;
-            }
-            showModal("modalItemAdded");
-        }
-        xhr.send(new FormData(form));
-    }
 </script>
 </body>
 </html>
