@@ -1,22 +1,41 @@
 <?php
 session_start();
 
+header("Content-Type: application/json");
+
 require_once "../includes/config.php";
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    exit;
-}
+try {
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+        throw new Exception("Invalid request method");
+    }
 
-if (Database::getInstance()->createMessage(
-    $_POST["first-name"],
-    $_POST["last-name"],
-    $_POST["email"],
-    $_POST["message"]
-)) {
-    $_SESSION["message_created_message"] = "Your message has been sent successfully!";
-} else {
-    $_SESSION["message_created_message"] = "Message could not be created!";
-}
+    if (!isset($_POST["first-name"])
+        || !isset($_POST["last-name"])
+        || !isset($_POST["email"])
+        || !isset($_POST["message"])) {
+        throw new Exception("Missing parameters");
+    }
 
-header("Location: ../contact");
+    $success = Database::getInstance()->createMessage(
+        $_POST["first-name"],
+        $_POST["last-name"],
+        $_POST["email"],
+        $_POST["message"]
+    );
+
+    if (!$success) {
+        throw new Exception("Message could not be created!");
+    }
+
+    echo json_encode(array(
+        "success" => true,
+    ));
+
+} catch (Exception $e) {
+    echo json_encode(array(
+        "success" => false,
+        "message" => $e->getMessage()
+    ));
+}
 exit;
