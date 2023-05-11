@@ -23,12 +23,6 @@ require_once "includes/config.php";
     <?php renderNavbar() ?>
 </header>
 <main>
-    <?php
-    if (isset($_SESSION["item_added_message"])) {
-        echo alert($_SESSION["item_added_message"]);
-        unset($_SESSION["item_added_message"]);
-    }
-    ?>
     <section class="mb-5">
         <?php echo imageOverlay("assets/images/backgrounds/table.jpg", "MENU"); ?>
         <hr>
@@ -59,21 +53,21 @@ require_once "includes/config.php";
                         <div class="mx-auto">
                             <p class="font-bold text-decoration">$row->price ILS</p>
                         </div>
-                        <form action="actions/add_to_cart.php" method="post">
+                        <form class="add-to-cart-form" method="post">
                             <input type="hidden" name="id" value="$row->id">
                             <div class="dropdown mx-auto">
                                 <ul class="dropdown-menu">
                                     <li><label class="dropdown-item">
-                                        <input type="submit" name="size" value="s" style="display:none;">
-                                        SMALL</label></li>
+                                        <input type="radio" name="size" value="s"> SMALL</label></li>
                                     <li><label class="dropdown-item">
-                                        <input type="submit" name="size" value="m" style="display:none;">
-                                        MEDIUM</label></li>
+                                        <input type="radio" name="size" value="m"> MEDIUM</label></li>
                                     <li><label class="dropdown-item">
-                                        <input type="submit" name="size" value="l" style="display:none;">
-                                        LARGE</label></li>
+                                        <input type="radio" name="size" value="l"> LARGE</label></li>
                                 </ul>
-                                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
+                                <button type="button" class="btn btn-outline-dark dropdown-toggle" 
+                                        data-bs-toggle="dropdown">SIZE
+                                </button>
+                                <button type="submit" class="btn btn-warning">
                                     ADD TO CART
                                 </button>
                             </div>
@@ -85,8 +79,48 @@ require_once "includes/config.php";
             }
             ?>
         </div>
+        <div class="modal fade" id="modalItemAdded">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h5>Item added to cart successfully!</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="cart" class="btn btn-warning">VIEW IN CART</a>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
 <?php renderFooter() ?>
+<script>
+    document.querySelectorAll(".add-to-cart-form").forEach(function (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            addToCart(this);
+        })
+    })
+
+    function addToCart(form) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("post", "actions/add_to_cart.php", true);
+        xhr.onload = function () {
+            if (this.status !== 200) {
+                console.log("Request failed");
+                return;
+            }
+            let result = JSON.parse(this.responseText);
+            if (!result.success) {
+                console.log(result.message);
+                return;
+            }
+            let modal = new bootstrap.Modal(document.getElementById('modalItemAdded'), {});
+            modal.show();
+        }
+        xhr.send(new FormData(form));
+    }
+</script>
 </body>
 </html>
