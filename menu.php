@@ -96,7 +96,6 @@ require_once "includes/config.php";
 </main>
 <?php renderFooter() ?>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/cart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
@@ -104,9 +103,18 @@ require_once "includes/config.php";
     document.querySelectorAll(".add-item-form").forEach(function (form) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
-            addToCart(this, document.getElementById("modalItemAdded"));
+            addToCart(this);
         });
     })
+
+    function addToCart(addItemForm) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("post", "actions/add_to_cart.php", true);
+        xhr.onload = function () {
+            triggerModalOnLoad(this, document.getElementById("modalItemAdded"));
+        }
+        xhr.send(new FormData(addItemForm));
+    }
 </script>
 </body>
 </html>
