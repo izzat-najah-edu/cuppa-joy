@@ -58,11 +58,11 @@ require_once "includes/config.php";
                             <div class="dropdown mx-auto">
                                 <ul class="dropdown-menu">
                                     <li><label class="dropdown-item">
-                                        <input type="radio" name="size" value="s"> SMALL</label></li>
+                                        <input type="radio" name="size" value="s">SMALL</label></li>
                                     <li><label class="dropdown-item">
-                                        <input type="radio" name="size" value="m"> MEDIUM</label></li>
+                                        <input type="radio" name="size" value="m">MEDIUM</label></li>
                                     <li><label class="dropdown-item">
-                                        <input type="radio" name="size" value="l"> LARGE</label></li>
+                                        <input type="radio" name="size" value="l">LARGE</label></li>
                                 </ul>
                                 <button type="button" class="btn btn-outline-dark dropdown-toggle" 
                                         data-bs-toggle="dropdown">SIZE
@@ -95,6 +95,10 @@ require_once "includes/config.php";
     </section>
 </main>
 <?php renderFooter() ?>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 <script>
     document.querySelectorAll(".add-to-cart-form").forEach(function (form) {
         form.addEventListener("submit", function (event) {
