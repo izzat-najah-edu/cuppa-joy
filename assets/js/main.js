@@ -18,3 +18,7 @@ function getCookie(name) {
     }
     return null;
 }
+
+function showModal(id) {
+    new bootstrap.Modal(document.getElementById(id), {}).show();
+}

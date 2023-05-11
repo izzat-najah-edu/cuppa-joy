@@ -120,8 +120,7 @@ require_once "includes/config.php";
                 console.log(result.message);
                 return;
             }
-            let modal = new bootstrap.Modal(document.getElementById('modalItemAdded'), {});
-            modal.show();
+            showModal("modalItemAdded");
         }
         xhr.send(new FormData(form));
     }
