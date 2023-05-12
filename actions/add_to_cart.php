@@ -41,9 +41,9 @@ try {
     exit;
 
 } catch (Exception $e) {
-    echo json_encode(array(
+    echo json_encode([
         "success" => false,
         "message" => $e->getMessage()
-    ));
+    ]);
 }
 exit;
