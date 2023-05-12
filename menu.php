@@ -53,7 +53,7 @@ require_once "includes/config.php";
                         <div class="mx-auto">
                             <p class="font-bold text-decoration">$row->price ILS</p>
                         </div>
-                        <form class="add-item-form" method="post">
+                        <form class="quantity-change-form" method="post">
                             <input type="hidden" name="id" value="$row->id">
                             <input type="hidden" name="quantity-change" value="1">
                             <div class="dropdown mx-auto">
@@ -101,20 +101,20 @@ require_once "includes/config.php";
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script>
-    document.querySelectorAll(".add-item-form").forEach(function (form) {
+    document.querySelectorAll(".quantity-change-form").forEach(function (form) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
-            addToCart(this);
+            changeItemQuantity(this);
         });
     })
 
-    function addToCart(addItemForm) {
+    function changeItemQuantity(quantityChangeForm) {
         let xhr = new XMLHttpRequest();
         xhr.open("post", "actions/add_to_cart.php", true);
         xhr.onload = function () {
             triggerOnLoad(this, document.getElementById("modalItemAdded"));
         }
-        xhr.send(new FormData(addItemForm));
+        xhr.send(new FormData(quantityChangeForm));
     }
 </script>
 </body>
