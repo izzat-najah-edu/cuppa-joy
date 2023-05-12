@@ -36,7 +36,7 @@ require_once "includes/component.php";
     </section>
     <section class="mb-5">
         <?php echo imageOverlay("assets/images/backgrounds/waitress2.jpg", "FIND US") ?>
-        <div class="text-box">
+        <div class="text-box mb-5">
             <p>Our expert baristas are devoted to crafting each cup to perfection, with unwavering
                 attention to detail.
             </p>
