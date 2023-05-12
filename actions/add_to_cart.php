@@ -8,12 +8,8 @@ try {
         throw new Exception("Invalid request method");
     }
 
-    if (!isset($_POST["id"])) {
-        throw new Exception("Missing parameters [id]");
-    }
-
-    if (!isset($_POST["size"])) {
-        throw new Exception("Missing parameters [size]");
+    if (!isset($_POST["id"]) || !isset($_POST["size"]) || !isset($_POST["quantity-change"])) {
+        throw new Exception("Missing parameters");
     }
 
     if (!isset($_SESSION["cart"])) {
@@ -33,7 +29,7 @@ try {
         );
     }
 
-    $_SESSION["cart"][$id][$size]["quantity"]++;
+    $_SESSION["cart"][$id][$size]["quantity"] += $_POST["quantity-change"];
 
     echo json_encode(array(
         "success" => true

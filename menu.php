@@ -55,6 +55,7 @@ require_once "includes/config.php";
                         </div>
                         <form class="add-item-form" method="post">
                             <input type="hidden" name="id" value="$row->id">
+                            <input type="hidden" name="quantity-change" value="1">
                             <div class="dropdown mx-auto">
                                 <ul class="dropdown-menu">
                                     <li><label class="dropdown-item">
