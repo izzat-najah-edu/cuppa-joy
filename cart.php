@@ -53,16 +53,11 @@ require_once "includes/config.php";
                                 <td>$ucsize</td>
                                 <td>$coffee->price ILS</td>
                                 <td>
-                                    <form class="quantity-change-form" method="post" data-id="$id" data-size="$size">
-                                        <input type="hidden" name="id" value="$id">
-                                        <input type="hidden" name="size" value="$size">
-                                        <input type="hidden" name="quantity-change" id="quantity-change-$id-$size">
-                                        <button type="button" onclick="decrementQuantity('$id', '$size')" 
-                                                class="quantity-decrease btn">-</button>
-                                        <span class="quantity-value">{$properties["quantity"]}</span>
-                                        <button type="button" onclick="incrementQuantity('$id', '$size')" 
-                                                class="quantity-increase btn">+</button>
-                                    </form>
+                                    <button type="button" data-id="$id" data-size="$size"
+                                            class="quantity-change-button quantity-decrease btn">-</button>
+                                    <span class="quantity-value">{$properties["quantity"]}</span>
+                                    <button type="button" data-id="$id" data-size="$size"
+                                            class="quantity-change-button quantity-increase btn">+</button>
                                 </td>
                                 <td></td>
                             </tr>
@@ -101,32 +96,22 @@ require_once "includes/config.php";
 <script>
     document.addEventListener("DOMContentLoaded", calculateTotals);
 
-    document.querySelectorAll(".quantity-change-form").forEach(form =>
-        form.addEventListener("submit", event => {
-            event.preventDefault();
+    document.querySelectorAll(".quantity-change-button").forEach(button =>
+        button.addEventListener("click", () => {
+            const formData = new FormData();
+            formData.set("id", button.dataset.id);
+            formData.set("size", button.dataset.size);
+            formData.set("quantity-change", button.classList.contains("quantity-increase") ? "1" : "-1");
             asyncRequest(
                 "change_quantity",
-                new FormData(form),
-                calculateTotals
+                formData,
+                function (response) {
+                    button.parentElement.querySelector(".quantity-value").innerText = response.quantity;
+                    calculateTotals();
+                }
             );
         })
     );
-
-    function incrementQuantity(id, size) {
-        document.getElementById(`quantity-change-${id}-${size}`).value = 1;
-        const form = document.querySelector(`form[data-id='${id}'][data-size='${size}']`);
-        const value = form.querySelector(".quantity-value");
-        value.innerText = Number(value.innerText) + 1;
-        form.requestSubmit();
-    }
-
-    function decrementQuantity(id, size) {
-        document.getElementById(`quantity-change-${id}-${size}`).value = -1;
-        const form = document.querySelector(`form[data-id='${id}'][data-size='${size}']`);
-        const value = form.querySelector(".quantity-value");
-        value.innerText = Number(value.innerText) - 1;
-        form.requestSubmit();
-    }
 
     function fillPricesAndGetTotal(cartItemsTableRows) {
         let total = 0;

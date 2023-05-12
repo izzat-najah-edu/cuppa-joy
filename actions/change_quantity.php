@@ -32,7 +32,8 @@ try {
     $_SESSION["cart"][$id][$size]["quantity"] += $_POST["quantity-change"];
 
     echo json_encode(array(
-        "success" => true
+        "success" => true,
+        "quantity" => $_SESSION["cart"][$id][$size]["quantity"]
     ));
     exit;
 
