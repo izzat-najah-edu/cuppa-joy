@@ -45,17 +45,24 @@ require_once "includes/config.php";
                             foreach ($_SESSION["cart"] as $id => $sizes) {
                                 $coffee = Database::getInstance()->getCoffee(strval($id))->fetch_object();
                                 foreach ($sizes as $size => $properties) {
-                                    $size = ucfirst($size);
+                                    $ucsize = ucfirst($size);
                                     echo <<<ROW
                             <tr>
                                 <td><img src="assets/$coffee->image_url" alt="$coffee->name" width="50px">
                                     <span class="ml-5">$coffee->name</span></td>
-                                <td>$size</td>
+                                <td>$ucsize</td>
                                 <td>$coffee->price ILS</td>
                                 <td>
-                                    <button class="quantity-decrease btn">-</button>
-                                    <span class="quantity-value">{$properties["quantity"]}</span>
-                                    <button class="quantity-increase btn">+</button>
+                                    <form class="quantity-change-form" method="post" data-id="$id" data-size="$size">
+                                        <input type="hidden" name="id" value="$id">
+                                        <input type="hidden" name="size" value="$size">
+                                        <input type="hidden" name="quantity-change" id="quantity-change-$id-$size">
+                                        <button type="button" onclick="decrementQuantity('$id', '$size')" 
+                                                class="quantity-decrease btn">-</button>
+                                        <span class="quantity-value">{$properties["quantity"]}</span>
+                                        <button type="button" onclick="incrementQuantity('$id', '$size')" 
+                                                class="quantity-increase btn">+</button>
+                                    </form>
                                 </td>
                                 <td></td>
                             </tr>
@@ -88,11 +95,35 @@ require_once "includes/config.php";
 </main>
 <?php renderFooter() ?>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/cart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script>
-    const TAX_RATE = <?php echo Database::getInstance()->getTaxRate() ?>;
+    document.addEventListener("DOMContentLoaded", calculateTotals);
+
+    document.querySelectorAll(".quantity-change-form").forEach(form =>
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+            changeItemQuantity(form, calculateTotals);
+        })
+    );
+
+    function incrementQuantity(id, size) {
+        document.getElementById(`quantity-change-${id}-${size}`).value = 1;
+        const form = document.querySelector(`form[data-id='${id}'][data-size='${size}']`);
+        const value = form.querySelector(".quantity-value");
+        value.innerText = Number(value.innerText) + 1;
+        form.requestSubmit();
+    }
+
+    function decrementQuantity(id, size) {
+        document.getElementById(`quantity-change-${id}-${size}`).value = -1;
+        const form = document.querySelector(`form[data-id='${id}'][data-size='${size}']`);
+        const value = form.querySelector(".quantity-value");
+        value.innerText = Number(value.innerText) - 1;
+        form.requestSubmit();
+    }
 
     function fillPricesAndGetTotal(cartItemsTableRows) {
         let total = 0;
@@ -107,17 +138,17 @@ require_once "includes/config.php";
         return total;
     }
 
-    document.addEventListener("DOMContentLoaded", function calculateTotals() {
+    function calculateTotals() {
         const subtotal = fillPricesAndGetTotal(
             document.querySelectorAll('.cart-table tr:not(:first-child)')
         );
-        const tax = subtotal * TAX_RATE;
+        const tax = subtotal * <?php echo Database::getInstance()->getTaxRate() ?>;
         const total = subtotal + tax;
 
         document.getElementById('subtotal').innerText = subtotal.toFixed(2) + "ILS";
         document.getElementById('tax').innerText = tax.toFixed(2) + "ILS";
         document.getElementById('total').innerText = total.toFixed(2) + "ILS";
-    })
+    }
 </script>
 </body>
 </html>
