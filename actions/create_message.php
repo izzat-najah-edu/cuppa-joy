@@ -28,9 +28,9 @@ try {
         throw new Exception("Message could not be created!");
     }
 
-    echo json_encode(array(
+    echo json_encode([
         "success" => true,
-    ));
+    ]);
 
 } catch (Exception $e) {
     echo json_encode([

@@ -23,9 +23,9 @@ try {
         unset($_SESSION["cart"][$id][$size]);
     }
 
-    echo json_encode(array(
+    echo json_encode([
         "success" => true
-    ));
+    ]);
     exit;
 
 } catch (Exception $e) {

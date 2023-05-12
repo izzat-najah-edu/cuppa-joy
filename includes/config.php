@@ -11,6 +11,7 @@ class Database {
     private mysqli $connection;
     private mysqli_stmt $coffee_query;
     private mysqli_stmt $message_insert;
+    private mysqli_stmt $subscriber_insert;
 
     public static function getInstance(): Database {
         if (!isset(self::$instance)) {
@@ -35,6 +36,9 @@ class Database {
             );
             $this->message_insert = $this->connection->prepare(
                 "insert into messages (first_name, last_name, email, message) values (?,?,?,?)"
+            );
+            $this->subscriber_insert = $this->connection->prepare(
+                "insert into subscribers (email) values (?)"
             );
         } catch (mysqli_sql_exception $e) {
             echo 'Database Error: ' . $e->getMessage();
@@ -66,5 +70,10 @@ class Database {
             "ssss", $firstName, $lastName, $email, $message
         );
         return $this->message_insert->execute();
+    }
+
+    public function subscribeEmail(string $email): bool {
+        $this->subscriber_insert->bind_param("s", $email);
+        return $this->subscriber_insert->execute();
     }
 }

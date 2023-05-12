@@ -42,11 +42,54 @@ require_once "includes/component.php";
             </p>
         </div>
     </section>
+    <hr>
+    <section class="mb-5 newsletter-signup py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h3 class="mb-3 font-bold">Subscribe to our newsletter</h3>
+                    <p class="mb-4">Stay updated with our latest news, products, and promotions.</p>
+                    <form id="subscribeForm" method="post" class="input-group mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                               aria-label="Enter your email" required>
+                        <button class="btn btn-warning" type="submit" id="button-addon2">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="modalSubscribed">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5>Thanks for subscribing to our newsletter!</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
 </main>
 <?php renderFooter() ?>
 <script src="assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+<script>
+    const form = document.getElementById("subscribeForm");
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+        asyncRequest(
+            "subscribe",
+            new FormData(form),
+            () => {
+                showModal(document.getElementById("modalSubscribed"));
+                form.querySelectorAll("input").forEach(input => input.value = "");
+            }
+        );
+    })
+</script>
 </body>
 </html>
