@@ -40,6 +40,7 @@ require_once "includes/config.php";
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
+                                <th></th>
                             </tr>
                             <?php
                             foreach ($_SESSION["cart"] as $id => $sizes) {
@@ -60,6 +61,10 @@ require_once "includes/config.php";
                                             class="quantity-change-button quantity-increase btn">+</button>
                                 </td>
                                 <td></td>
+                                <td>
+                                    <button type="button" data-id="$id" data-size="$size"
+                                            class="btn btn-outline-dark remove-button">Remove</button>
+                                </td>
                             </tr>
                         ROW;
                                 }
@@ -87,6 +92,18 @@ require_once "includes/config.php";
             </div>
         </div>
     </section>
+    <div class="modal fade" id="modalItemRemoved">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5>Item removed from cart successfully!</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <?php renderFooter() ?>
 <script src="assets/js/main.js"></script>
@@ -105,8 +122,25 @@ require_once "includes/config.php";
             asyncRequest(
                 "change_quantity",
                 formData,
-                function (response) {
+                (response) => {
                     button.parentElement.querySelector(".quantity-value").innerText = response.quantity;
+                    calculateTotals();
+                }
+            );
+        })
+    );
+
+    document.querySelectorAll(".remove-button").forEach(button =>
+        button.addEventListener("click", () => {
+            const formData = new FormData();
+            formData.set("id", button.dataset.id);
+            formData.set("size", button.dataset.size);
+            asyncRequest(
+                "remove_item",
+                formData,
+                () => {
+                    button.closest("tr").remove();
+                    showModal(document.getElementById("modalItemRemoved"));
                     calculateTotals();
                 }
             );
