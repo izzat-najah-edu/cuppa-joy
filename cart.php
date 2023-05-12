@@ -98,10 +98,10 @@ require_once "includes/config.php";
         let total = 0;
         cartItemsTableRows.forEach(function (row) {
             let price = parseFloat(row.cells[2].innerText);
-            let quantity = parseInt(row.cells[3].innerText);
+            let quantity = parseInt(row.cells[3].querySelector(".quantity-value").innerText);
             let subtotal = price * quantity;
 
-            row.cells[4].innerText = subtotal.toFixed(2) + "ILS";
+            row.cells[4].innerHTML = subtotal.toFixed(2) + "ILS";
             total += subtotal;
         })
         return total;
