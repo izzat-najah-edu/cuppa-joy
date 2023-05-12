@@ -41,6 +41,15 @@ require_once "includes/component.php";
                 attention to detail.
             </p>
         </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <div class="embed-responsive embed-responsive-16by9 border border-5 rounded p-3">
+                    <iframe class="embed-responsive-item"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.9924479196623!2d35.20689131520518!3d31.768319681285653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x150329d0a5c5a5ad%3A0x4dc7f66f4b4e4e0c!2sChurch%20of%20the%20Nativity!5e0!3m2!1sen!2s!4v1643501926958!5m2!1sen!2s"
+                            allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
     </section>
     <hr>
     <section class="mb-5 newsletter-signup py-5">
@@ -91,4 +100,4 @@ require_once "includes/component.php";
     })
 </script>
 </body>
-</html>
+</html>/
