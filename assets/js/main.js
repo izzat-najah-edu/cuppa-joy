@@ -22,18 +22,3 @@ function getCookie(name) {
 function showModal(modal) {
     new bootstrap.Modal(modal, {}).show();
 }
-
-function triggerOnLoad(xhr, modal) {
-    if (xhr.status !== 200) {
-        console.log("Request failed");
-        return;
-    }
-    let result = JSON.parse(xhr.responseText);
-    if (!result.success) {
-        console.log(result.message);
-        return;
-    }
-    if (modal) {
-        showModal(modal);
-    }
-}
