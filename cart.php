@@ -49,10 +49,14 @@ require_once "includes/config.php";
                                     echo <<<ROW
                             <tr>
                                 <td><img src="assets/$coffee->image_url" alt="$coffee->name" width="50px">
-                                    $coffee->name</td>
+                                    <span class="ml-5">$coffee->name</span></td>
                                 <td>$size</td>
-                                <td>$coffee->price</td>
-                                <td>{$properties["quantity"]}</td>
+                                <td>$coffee->price ILS</td>
+                                <td>
+                                    <button class="quantity-decrease btn">-</button>
+                                    <span class="quantity-value">{$properties["quantity"]}</span>
+                                    <button class="quantity-increase btn">+</button>
+                                </td>
                                 <td></td>
                             </tr>
                         ROW;
