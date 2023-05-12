@@ -57,19 +57,19 @@ require_once "includes/component.php";
                 </div>
             </div>
         </div>
-    </section>
-    <div class="modal fade" id="modalSubscribed">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h5>Thanks for subscribing to our newsletter!</h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">CLOSE</button>
+        <div class="modal fade" id="modalSubscribed">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h5>Thanks for subscribing to our newsletter!</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">CLOSE</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <hr>
 </main>
 <?php renderFooter() ?>
@@ -78,15 +78,14 @@ require_once "includes/component.php";
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script>
-    const form = document.getElementById("subscribeForm");
-    form.addEventListener("submit", event => {
+    document.getElementById("subscribeForm").addEventListener("submit", event => {
         event.preventDefault();
         asyncRequest(
             "subscribe",
-            new FormData(form),
+            new FormData(document.getElementById("subscribeForm")),
             () => {
                 showModal(document.getElementById("modalSubscribed"));
-                form.querySelectorAll("input").forEach(input => input.value = "");
+                document.querySelectorAll("#subscribeForm input").forEach(input => input.value = "");
             }
         );
     })
