@@ -12,8 +12,10 @@ function imageOverlay(string $backgroundImageURL, string $title, string $content
     return <<<OVERLAY
         <div class="image-overlay d-flex align-items-center justify-content-center text-center mb-5"
              style="background-image: url($backgroundImageURL);">
-            <h2 class="card-title display-2 font-title">$title</h2>
-            $content
+             <div class="container-fluid">
+                 <h2 class="card-title display-2 font-title mb-5">$title</h2>
+                 $content
+             </div>
         </div>
     OVERLAY;
 }
