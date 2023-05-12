@@ -47,6 +47,10 @@ class Database {
         }
     }
 
+    public function getTaxRate(): float {
+        return 0.1;
+    }
+
     public function getCoffee(int $id): mysqli_result|bool {
         $this->coffee_query->bind_param("i", $id);
         $this->coffee_query->execute();

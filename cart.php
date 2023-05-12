@@ -32,8 +32,8 @@ require_once "includes/config.php";
                     <div class="card-header">
                         <h4>Cart Items</h4>
                     </div>
-                    <div class="cart-body">
-                        <table class="table">
+                    <div class="card-body">
+                        <table class="table cart-table">
                             <tr>
                                 <th>Item</th>
                                 <th>Size</th>
@@ -87,5 +87,33 @@ require_once "includes/config.php";
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+<script>
+    const TAX_RATE = <?php echo Database::getInstance()->getTaxRate() ?>;
+
+    function fillPricesAndGetTotal(cartItemsTableRows) {
+        let total = 0;
+        cartItemsTableRows.forEach(function (row) {
+            let price = parseFloat(row.cells[2].innerText);
+            let quantity = parseInt(row.cells[3].innerText);
+            let subtotal = price * quantity;
+
+            row.cells[4].innerText = subtotal.toFixed(2) + "ILS";
+            total += subtotal;
+        })
+        return total;
+    }
+
+    document.addEventListener("DOMContentLoaded", function calculateTotals() {
+        const subtotal = fillPricesAndGetTotal(
+            document.querySelectorAll('.cart-table tr:not(:first-child)')
+        );
+        const tax = subtotal * TAX_RATE;
+        const total = subtotal + tax;
+
+        document.getElementById('subtotal').innerText = subtotal.toFixed(2) + "ILS";
+        document.getElementById('tax').innerText = tax.toFixed(2) + "ILS";
+        document.getElementById('total').innerText = total.toFixed(2) + "ILS";
+    })
+</script>
 </body>
 </html>
