@@ -30,7 +30,7 @@
                 </li>
             </ul>
             <div class="d-flex align-items-center justify-content-end ms-auto">
-                <i class="mx-2 btn" onclick="toggleLanguage()">
+                <i class="mx-2 btn" onclick="toggleLanguage('en')">
                     <img src="../assets/images/icons/language_dark.png" alt="Language" width="25px" height="25px">
                 </i>
                 <i class="mx-2 btn" onclick="toggleTheme()">

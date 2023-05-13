@@ -88,3 +88,8 @@ document.addEventListener("DOMContentLoaded", function setupTheme() {
         toggleTheme();
     }
 });
+
+function toggleLanguage(newLanguage) {
+    localStorage.setItem("lang", newLanguage ?? "en");
+    location.href = ".."
+}

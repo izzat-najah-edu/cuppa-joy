@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <script>
-        location.href = localStorage.getItem("lang") || "en";
+        location.replace(localStorage.getItem("lang") || "en");
     </script>
     <title>Redirecting</title>
 </head>
