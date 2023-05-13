@@ -50,7 +50,7 @@ require_once "../includes/config.php";
                                     echo <<<ROW
                             <tr>
                                 <td><img src="../assets/$coffee->image_url" alt="$coffee->name" width="50px">
-                                    <span class="ml-5">$coffee->name</span></td>
+                                    <span class="ml-5">$coffee->name_arabic</span></td>
                                 <td>$ucsize</td>
                                 <td>$coffee->price ILS</td>
                                 <td>

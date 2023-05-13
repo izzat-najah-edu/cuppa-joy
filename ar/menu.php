@@ -43,10 +43,10 @@ require_once "../includes/config.php";
             <div class="card menu-item">
                 <img class="card-img-top" src="../assets/$row->image_url" alt="$row->name">
                 <div class="card-header font-glow">
-                    <h3 class="card-title text-center font-fancy">$row->name</h3>
+                    <h3 class="card-title text-center font-fancy">$row->name_arabic</h3>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">$row->description</p>
+                    <p class="card-text">$row->description_arabic</p>
                 </div>
                 <div class="card-footer">
                     <div class="d-flex">
