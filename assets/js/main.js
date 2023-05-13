@@ -50,6 +50,7 @@ function toggleTheme() {
     toggleThemeBody();
     toggleThemeNavbar(theme, newTheme);
     toggleThemeModals();
+    toggleThemeButtons();
     if (typeof toggleThemeFixes === 'function') {
         toggleThemeFixes();
     }
@@ -71,6 +72,14 @@ function toggleThemeNavbar(theme, newTheme) {
 function toggleThemeModals() {
     document.querySelectorAll(".modal-content")
         .forEach(modal => modal.classList.toggle("bg-dark"));
+}
+
+function toggleThemeButtons() {
+    document.querySelectorAll(".btn").forEach(btn => {
+        if (!btn.classList.replace("btn-outline-dark", "btn-outline-light")) {
+            btn.classList.replace("btn-outline-light", "btn-outline-dark");
+        }
+    })
 }
 
 document.addEventListener("DOMContentLoaded", function setupTheme() {
