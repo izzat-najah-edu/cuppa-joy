@@ -114,6 +114,9 @@ require_once "includes/config.php";
     function toggleThemeFixes() {
         document.querySelectorAll(".card").forEach(card => card.classList.toggle("bg-dark"));
         document.querySelector(".table").classList.toggle("text-white");
+        document.querySelectorAll(".quantity-change-button").forEach(btn => {
+            btn.classList.toggle("text-white");
+        });
     }
 
     document.addEventListener("DOMContentLoaded", calculateTotals);
