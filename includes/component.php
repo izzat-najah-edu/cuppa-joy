@@ -1,13 +1,5 @@
 <?php namespace html;
 
-function renderNavbar(): void {
-    require_once "components/navbar.php";
-}
-
-function renderFooter(): void {
-    require_once "components/footer.php";
-}
-
 function imageOverlay(string $backgroundImageURL, string $title, string $content = ""): string {
     return <<<OVERLAY
         <div class="image-overlay d-flex align-items-center justify-content-center text-center mb-5"
