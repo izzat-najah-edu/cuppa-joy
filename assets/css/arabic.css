@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Tajawal:wght@400;700;900&display=swap');
+
+:root {
+    --font-normal: 'Tajawal', sans-serif;
+    --font-fancy: 'Aref Ruqaa', serif;
+}
+
+.font-spread, .font-title, .text-box {
+    letter-spacing: 0;
+}
