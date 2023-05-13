@@ -33,7 +33,11 @@ VALUES ("Espresso",
        ("Cold Brew",
         "Steeped for hours in cold water, our cold brew coffee offers a smooth and flavorful taste with lower acidity, perfect for those who prefer a less bitter coffee experience.",
         11.99,
-        "images/coffee/cold_brew.jpg");
+        "images/coffee/cold_brew.jpg"),
+       ("Macchiato",
+        "Our Macchiato is a bold espresso marked with a dollop of frothy milk, creating a strong yet balanced coffee delight.",
+        12.99,
+        "images/coffee/macchiato.jpg");
 
 UPDATE coffee
 SET name_arabic        = "إسبرسو",
@@ -74,3 +78,8 @@ UPDATE coffee
 SET name_arabic        = "كولد برو",
     description_arabic = "تم تنقيع قهوتنا الباردة لساعات في الماء البارد ، وتقدم نكهة سلسة ومليئة بالنكهة مع درجة حموضة أقل ، مثالية لمن يفضل تجربة قهوة أقل مرارة."
 WHERE name = "Cold Brew";
+
+UPDATE coffee
+SET name_arabic        = "ماكياتو",
+    description_arabic = "ماكياتو لدينا هو إسبرسو جريء معلم بقليل من الحليب الرغوي ، مما يخلق متعة قهوة قوية ومتوازنة."
+WHERE name = "Macchiato";
