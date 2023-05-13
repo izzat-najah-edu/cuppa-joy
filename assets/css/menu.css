@@ -29,10 +29,6 @@
     border: 2px solid var(--primary-color);
 }
 
-.dark-theme .menu-item {
-    background-color: rgba(145, 110, 62, 0.68);
-}
-
 .menu-item img {
     width: 100%;
     height: auto;
