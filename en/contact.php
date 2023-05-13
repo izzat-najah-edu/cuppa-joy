@@ -17,7 +17,7 @@ require_once "../includes/component.php";
     <link rel="icon" href="../favicon.png" type="image/x-icon">
     <title>Contact | Cuppa Joy</title>
 </head>
-<body>
+<body class="bg-dark">
 <header>
     <div class="container">
         <ul>

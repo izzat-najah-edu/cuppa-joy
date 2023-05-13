@@ -23,6 +23,11 @@ body {
 
 }
 
+main {
+    padding: 0;
+    margin: 0;
+}
+
 .dark {
     --bg-color: hsl(var(--main-hue), 30%, 16.5%);
     --input-bg: hsla(var(--main-hue), 22%, 50%, 11%);
