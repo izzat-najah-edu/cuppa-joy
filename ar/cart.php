@@ -63,7 +63,7 @@ require_once "../includes/config.php";
                                 <td></td>
                                 <td>
                                     <button type="button" data-id="$id" data-size="$size"
-                                            class="btn btn-outline-dark remove-button">Remove</button>
+                                            class="btn btn-outline-dark remove-button">إزالة</button>
                                 </td>
                             </tr>
                         ROW;
