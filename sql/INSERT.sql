@@ -61,6 +61,11 @@ SET name_arabic        = "موكا",
 WHERE name = "Mocha";
 
 UPDATE coffee
+SET name_arabic        = "فلات وايت",
+    description_arabic = "من أستراليا ونيوزيلندا ، يجمع فلات وايت لدينا بين الإسبرسو والحليب المبخر ، مما يؤدي إلى نسيج ناعم وكريمي."
+WHERE name = "Flat White";
+
+UPDATE coffee
 SET name_arabic        = "قهوة مثلجة",
     description_arabic = "تم تحضير قهوتنا المثلجة بكل الكمال وتقدم على الثلج لتعتبر معاملة منعشة ومنشطة في يوم حار."
 WHERE name = "Iced Coffee";
