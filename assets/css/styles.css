@@ -192,3 +192,10 @@ nav * {
         margin-right: 3rem;
     }
 }
+
+/* Dark Theme */
+
+body.dark-theme {
+    background-color: black;
+    color: white;
+}
