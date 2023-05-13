@@ -203,3 +203,7 @@ nav * {
 .dark-theme .font-glow {
     text-shadow: black 0 0 1rem;
 }
+
+body, nav, .modal-content {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
