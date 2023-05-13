@@ -17,7 +17,7 @@
                 <ul>
                     <li><a href="index" class="text-white text-decoration-none">الرئيسية</a></li>
                     <li><a href="menu" class="text-white text-decoration-none">القائمة</a></li>
-                    <li><a href="about" class="text-white text-decoration-none">حول</a></li>
+                    <li><a href="about" class="text-white text-decoration-none">من نحن</a></li>
                     <li><a href="contact" class="text-white text-decoration-none">اتصل بنا</a></li>
                 </ul>
             </div>
