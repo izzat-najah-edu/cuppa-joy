@@ -49,6 +49,10 @@ function toggleTheme() {
     localStorage.setItem("theme", newTheme);
     toggleThemeBody();
     toggleThemeNavbar(theme, newTheme);
+    toggleThemeModals();
+    if (typeof toggleThemeFixes === 'function') {
+        toggleThemeFixes();
+    }
 }
 
 function toggleThemeBody() {
@@ -62,6 +66,11 @@ function toggleThemeNavbar(theme, newTheme) {
     nav.querySelectorAll("img").forEach(img => {
         img.src = img.src.replace(newTheme, theme);
     })
+}
+
+function toggleThemeModals() {
+    document.querySelectorAll(".modal-content")
+        .forEach(modal => modal.classList.toggle("bg-dark"));
 }
 
 document.addEventListener("DOMContentLoaded", function setupTheme() {

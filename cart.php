@@ -111,6 +111,11 @@ require_once "includes/config.php";
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script>
+    function toggleThemeFixes() {
+        document.querySelectorAll(".card").forEach(card => card.classList.toggle("bg-dark"));
+        document.querySelector(".table").classList.toggle("text-white");
+    }
+
     document.addEventListener("DOMContentLoaded", calculateTotals);
 
     document.querySelectorAll(".quantity-change-button").forEach(button =>
