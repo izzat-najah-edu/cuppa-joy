@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "includes/component.php";
+require_once "../includes/component.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,8 +12,8 @@ require_once "includes/component.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
     <title>Contact | Cuppa Joy</title>
 </head>
 <body>
@@ -23,8 +23,8 @@ require_once "includes/component.php";
             <li>
                 <a href="#" class="logo">
                     <div class="images">
-                        <img src="assets/images/icons/logo2.png" class="logo-forDark" title="Publius" alt="logo">
-                        <img src="assets/images/icons/logo2.png" class="logo-forLight" title="Publius" alt="logo">
+                        <img src="../assets/images/icons/logo2.png" class="logo-forDark" title="Publius" alt="logo">
+                        <img src="../assets/images/icons/logo2.png" class="logo-forLight" title="Publius" alt="logo">
                     </div>
                     <h2>Cuppa Joy<span>.</span></h2>
                 </a>
@@ -92,7 +92,7 @@ require_once "includes/component.php";
             </div>
             <div class="right">
                 <div class="image-wrapper">
-                    <img src="assets/images/gallery/background1.jpg" class="img" alt="icon">
+                    <img src="../assets/images/gallery/background1.jpg" class="img" alt="icon">
                 </div>
             </div>
             <div class="modal fade" id="modalMessageCreated">
@@ -111,7 +111,7 @@ require_once "includes/component.php";
     </section>
 </main>
 <?php renderFooter() ?>
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

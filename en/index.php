@@ -1,8 +1,6 @@
 <?php namespace html;
 
-$_COOKIE["theme"] = "dark";
-
-require_once "includes/component.php";
+require_once "../includes/component.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,7 +10,7 @@ require_once "includes/component.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <title>Home | Cuppa Joy</title>
 </head>
 <body>
@@ -21,7 +19,7 @@ require_once "includes/component.php";
 </header>
 <main>
     <section class="mb-5">
-        <?php echo imageOverlay("assets/images/backgrounds/beans.jpg", "CUPPA JOY"); ?>
+        <?php echo imageOverlay("../assets/images/backgrounds/beans.jpg", "CUPPA JOY"); ?>
         <div class="text-box">
             <p>Cuppa Joy is a cozy and welcoming coffee shop, dedicated to serving the finest coffee and
                 delicious treats, served by our expert baristas devoted to crafting the perfect cup with
@@ -29,14 +27,14 @@ require_once "includes/component.php";
         </div>
     </section>
     <section class="mb-5">
-        <?php echo imageOverlay("assets/images/backgrounds/shop.jpg", "SHOP NOW"); ?>
+        <?php echo imageOverlay("../assets/images/backgrounds/shop.jpg", "SHOP NOW"); ?>
         <div class="text-box">
             <p>Experience the unique flavors of our Single Origin coffee, sourced from the
                 finest coffee-producing regions around the world.</p>
         </div>
     </section>
     <section class="mb-5">
-        <?php echo imageOverlay("assets/images/backgrounds/waitress2.jpg", "FIND US") ?>
+        <?php echo imageOverlay("../assets/images/backgrounds/waitress2.jpg", "FIND US") ?>
         <div class="text-box mb-5">
             <p>Our expert baristas are devoted to crafting each cup to perfection, with unwavering
                 attention to detail.
@@ -83,7 +81,7 @@ require_once "includes/component.php";
     <hr>
 </main>
 <?php renderFooter() ?>
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
