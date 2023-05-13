@@ -1,5 +1,7 @@
 <?php namespace html;
 
+$_COOKIE["theme"] = "dark";
+
 require_once "includes/component.php";
 ?>
 <!doctype html>
@@ -100,4 +102,4 @@ require_once "includes/component.php";
     })
 </script>
 </body>
-</html>/
+</html>

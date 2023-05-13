@@ -195,7 +195,11 @@ nav * {
 
 /* Dark Theme */
 
-body.dark-theme {
+.dark-theme {
     background-color: black;
     color: white;
+}
+
+.dark-theme .font-glow {
+    text-shadow: black 0 0 1rem;
 }

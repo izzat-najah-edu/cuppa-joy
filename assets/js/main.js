@@ -42,3 +42,31 @@ function asyncRequest(action, body, onload) {
 function showModal(modal) {
     new bootstrap.Modal(modal, {}).show();
 }
+
+function toggleTheme() {
+    const theme = localStorage.getItem("theme") === "light" ? "light" : "dark";
+    const newTheme = theme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    toggleThemeBody();
+    toggleThemeNavbar(theme, newTheme);
+}
+
+function toggleThemeBody() {
+    document.querySelector("body").classList.toggle("dark-theme");
+}
+
+function toggleThemeNavbar(theme, newTheme) {
+    const nav = document.querySelector("nav");
+    nav.classList.toggle("navbar-light");
+    nav.classList.toggle("navbar-dark");
+    nav.querySelectorAll("img").forEach(img => {
+        img.src = img.src.replace(newTheme, theme);
+    })
+}
+
+document.addEventListener("DOMContentLoaded", function setupTheme() {
+    if (localStorage.getItem("theme") && localStorage.getItem("theme") === "dark") {
+        localStorage.setItem("theme", "light");
+        toggleTheme();
+    }
+});
