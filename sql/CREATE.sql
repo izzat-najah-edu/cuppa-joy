@@ -10,6 +10,10 @@ CREATE TABLE coffee
     image_url   VARCHAR(255)
 );
 
+ALTER TABLE coffee
+    ADD COLUMN name_arabic        VARCHAR(255),
+    ADD COLUMN description_arabic TEXT;
+
 CREATE TABLE subscribers
 (
     id    INT AUTO_INCREMENT PRIMARY KEY,
