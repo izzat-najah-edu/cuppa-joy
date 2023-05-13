@@ -59,11 +59,14 @@ require_once "includes/config.php";
                             <div class="dropdown mx-auto">
                                 <ul class="dropdown-menu">
                                     <li><label class="dropdown-item">
-                                        <input type="radio" name="size" value="s">SMALL</label></li>
+                                        <input type="radio" name="size" value="s" id="size-s">
+                                        <span>SMALL</span></label></li>
                                     <li><label class="dropdown-item">
-                                        <input type="radio" name="size" value="m">MEDIUM</label></li>
+                                        <input type="radio" name="size" value="m" id="size-m">
+                                        <span>MEDIUM</span></label></li>
                                     <li><label class="dropdown-item">
-                                        <input type="radio" name="size" value="l">LARGE</label></li>
+                                        <input type="radio" name="size" value="l" id="size-l">
+                                        <span>LARGE</span></label></li>
                                 </ul>
                                 <button type="button" class="btn btn-outline-dark dropdown-toggle" 
                                         data-bs-toggle="dropdown">SIZE

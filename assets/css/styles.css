@@ -159,6 +159,18 @@ nav * {
     color: #ffffff !important;
 }
 
+.dropdown-item input[type="radio"] {
+    display: none;
+}
+
+.dropdown-item span {
+    cursor: pointer;
+}
+
+.dropdown-item input[type="radio"]:checked + span {
+    text-decoration: underline;
+}
+
 /* Tweaks */
 
 @media (min-width: 1200px) {
