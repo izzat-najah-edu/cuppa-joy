@@ -19,7 +19,7 @@ require_once "../includes/component.php";
 </header>
 <main>
     <section class="mb-5">
-        <?php echo imageOverlay("../assets/images/backgrounds/machine.jpg", "MISSION"); ?>
+        <?php echo imageOverlay("../assets/images/backgrounds/machine.jpg", "OUR MISSION"); ?>
         <div class="text-box">
             <p>At our coffee shop, we pride ourselves on delivering exceptional experiences for our customers. Our
                 services cater to diverse preferences and needs, ensuring that everyone feels welcome and satisfied.</p>
