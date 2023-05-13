@@ -24,7 +24,7 @@ require_once "../includes/config.php";
 </header>
 <main>
     <section class="mb-5">
-        <?php echo imageOverlay("../assets/images/backgrounds/machine2.jpg", "العربة"); ?>
+        <?php echo imageOverlay("../assets/images/backgrounds/machine2.jpg", "عربة التسوق"); ?>
     </section>
     <section class="container">
         <div class="row">
