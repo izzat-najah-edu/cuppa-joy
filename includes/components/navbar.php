@@ -30,10 +30,10 @@
                 </li>
             </ul>
             <div class="d-flex align-items-center justify-content-end ms-auto">
-                <i class="mx-2 btn" onclick="switchLanguage()">
+                <i class="mx-2 btn" onclick="toggleLanguage()">
                     <img src="assets/images/icons/language_dark.png" alt="Language" width="25px" height="25px">
                 </i>
-                <i class="mx-2 btn" onclick="switchTheme()">
+                <i class="mx-2 btn" onclick="toggleTheme()">
                     <img src="assets/images/icons/theme_dark.png" alt="Theme" width="25px" height="25px">
                 </i>
                 <a class="mx-2 btn" href="cart">
