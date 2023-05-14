@@ -87,21 +87,9 @@ require_once "../actions/render.php";
 </main>
 <?php require_once "includes/footer.php" ?>
 <script src="../assets/js/main.js"></script>
+<script src="../assets/js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-<script>
-    document.getElementById("subscribeForm").addEventListener("submit", event => {
-        event.preventDefault();
-        asyncRequest(
-            "subscribe",
-            new FormData(document.getElementById("subscribeForm")),
-            () => {
-                showModal(document.getElementById("modalSubscribed"));
-                document.querySelectorAll("#subscribeForm input").forEach(input => input.value = "");
-            }
-        );
-    })
-</script>
 </body>
 </html>
