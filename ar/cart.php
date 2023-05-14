@@ -108,78 +108,12 @@ require_once "../actions/config.php";
 </main>
 <?php require_once "includes/footer.php" ?>
 <script src="../assets/js/main.js"></script>
+<script src="../assets/js/cart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script>
-    function toggleThemeFixes() {
-        document.querySelectorAll(".card").forEach(card => card.classList.toggle("bg-dark"));
-        document.querySelector(".table").classList.toggle("text-white");
-        document.querySelectorAll(".quantity-change-button").forEach(btn => {
-            btn.classList.toggle("text-white");
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", calculateTotals);
-
-    document.querySelectorAll(".quantity-change-button").forEach(button =>
-        button.addEventListener("click", () => {
-            const formData = new FormData();
-            formData.set("id", button.dataset.id);
-            formData.set("size", button.dataset.size);
-            formData.set("quantity-change", button.classList.contains("quantity-increase") ? "1" : "-1");
-            asyncRequest(
-                "change_quantity",
-                formData,
-                (response) => {
-                    button.parentElement.querySelector(".quantity-value").innerText = response.quantity;
-                    calculateTotals();
-                }
-            );
-        })
-    );
-
-    document.querySelectorAll(".remove-button").forEach(button =>
-        button.addEventListener("click", () => {
-            const formData = new FormData();
-            formData.set("id", button.dataset.id);
-            formData.set("size", button.dataset.size);
-            asyncRequest(
-                "remove_item",
-                formData,
-                () => {
-                    button.closest("tr").remove();
-                    showModal(document.getElementById("modalItemRemoved"));
-                    calculateTotals();
-                }
-            );
-        })
-    );
-
-    function fillPricesAndGetTotal(cartItemsTableRows) {
-        let total = 0;
-        cartItemsTableRows.forEach(function (row) {
-            let price = parseFloat(row.cells[2].innerText);
-            let quantity = parseInt(row.cells[3].querySelector(".quantity-value").innerText);
-            let subtotal = price * quantity;
-
-            row.cells[4].innerHTML = subtotal.toFixed(2) + "ILS";
-            total += subtotal;
-        })
-        return total;
-    }
-
-    function calculateTotals() {
-        const subtotal = fillPricesAndGetTotal(
-            document.querySelectorAll('.cart-table tr:not(:first-child)')
-        );
-        const tax = subtotal * <?php echo Database::getInstance()->getTaxRate() ?>;
-        const total = subtotal + tax;
-
-        document.getElementById('subtotal').innerText = subtotal.toFixed(2) + "ILS";
-        document.getElementById('tax').innerText = tax.toFixed(2) + "ILS";
-        document.getElementById('total').innerText = total.toFixed(2) + "ILS";
-    }
+    TAX_RATE = <?php echo Database::getInstance()->getTaxRate() ?>
 </script>
 </body>
 </html>
