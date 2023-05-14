@@ -52,7 +52,7 @@ img {
 }
 
 .bg-pattern {
-    background-image: url('../images/patterns/memphis-colorful.png');
+    background-image: url('memphis-colorful.png');
     background-repeat: repeat;
     background-size: auto;
     background-attachment: fixed;
