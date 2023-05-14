@@ -8,6 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+if (isset($_POST["logout"]) && $_POST["logout"]) {
+    unset($_SESSION["logged"]);
+    header("Location: index");
+    exit;
+}
+
 if (!isset($_POST["username"]) || !isset($_POST["password"])) {
     header("Location: index");
     exit;
