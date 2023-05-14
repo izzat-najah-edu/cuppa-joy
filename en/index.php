@@ -1,6 +1,6 @@
 <?php namespace html;
 
-require_once "../includes/component.php";
+require_once "../actions/render.php";
 ?>
 <!doctype html>
 <html lang="en">
