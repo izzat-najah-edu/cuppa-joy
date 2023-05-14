@@ -1,3 +1,8 @@
+-- test admin:
+INSERT INTO `admin` (username, password)
+VALUES ('admin', 'admin');
+
+-- sample coffee types:
 INSERT INTO coffee(NAME,
                    description,
                    price,

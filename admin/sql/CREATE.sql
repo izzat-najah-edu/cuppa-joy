@@ -30,31 +30,10 @@ CREATE TABLE messages
     created_at DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- Might be added later
-
-CREATE TABLE members
+CREATE TABLE `admin`
 (
-    id         INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(255)        NOT NULL,
-    last_name  VARCHAR(255)        NOT NULL,
-    username   VARCHAR(255) UNIQUE NOT NULL,
-    password   CHAR(60)            NOT NULL, -- Using bcrypt, password hashes are 60 characters long
-    email      VARCHAR(255) UNIQUE NOT NULL,
-    phone      VARCHAR(255),
-    address    VARCHAR(255),
-    join_date  DATETIME            NOT NULL DEFAULT CURRENT_TIMESTAMP
+    id         INT PRIMARY KEY,
+    username   VARCHAR(255) NOT NULL UNIQUE,
+    password   VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-DELIMITER $$
-
-CREATE TRIGGER subscribe_new_member -- All members are subscribers
-    AFTER INSERT
-    ON members
-    FOR EACH ROW
-BEGIN
-    IF NOT EXISTS (SELECT 1 FROM subscribers WHERE email = NEW.email) THEN
-        INSERT INTO subscribers (email) VALUES (NEW.email);
-    END IF;
-END$$
-
-DELIMITER ;
