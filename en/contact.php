@@ -113,51 +113,10 @@ require_once "../actions/render.php";
 </main>
 <?php require_once "includes/footer.php" ?>
 <script src="../assets/js/main.js"></script>
+<script src="../assets/js/contact.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-<script>
-    document.getElementById("message-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-        asyncRequest(
-            "create_message",
-            new FormData(document.getElementById("message-form")),
-            () => showModal(document.getElementById("modalMessageCreated"))
-        );
-    });
-
-    function setUpContactThemeToggle() {
-        const inputs = document.querySelectorAll('.contact-input');
-        const toggleBtn = document.querySelector(".theme-toggle");
-        const allElements = document.querySelectorAll("*");
-
-        toggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
-            // toggleBtn.classList.toggle("bx-sun");
-            allElements.forEach((el) => {
-                el.classList.add("transition");
-                setTimeout(() => {
-                    el.classList.remove("transition");
-                }, 1000);
-            });
-        });
-
-        inputs.forEach((ipt) => {
-            ipt.addEventListener('focus', () => {
-                ipt.parentNode.classList.add("focus");
-                ipt.parentNode.classList.add("not-empty");
-            });
-            ipt.addEventListener('blur', () => {
-                if (ipt.value === "") {
-                    ipt.parentNode.classList.remove("not-empty");
-                }
-                ipt.parentNode.classList.remove("focus");
-            });
-        })
-    }
-
-    setUpContactThemeToggle();
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
         integrity="sha384-Y7LSKwoY+C2iyfu/oupNnkGEN3EgA6skmJeVg5AyQk7ttcjX0XsLREmmuJW/SdbU"
         crossorigin="anonymous"></script>
