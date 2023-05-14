@@ -21,7 +21,7 @@ function getCookie(name) {
 
 function asyncRequest(action, body, onload) {
     const xhr = new XMLHttpRequest();
-    xhr.open("post", `../actions/${action}.php`, true);
+    xhr.open("post", `../actions/post/${action}.php`, true);
     xhr.onload = function () {
         if (this.status !== 200) {
             console.log("Request failed");
