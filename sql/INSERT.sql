@@ -1,6 +1,6 @@
--- test admin:
+-- test admin: [admin, admin]
 INSERT INTO `admin` (username, password)
-VALUES ('admin', 'admin');
+VALUES ('admin', '$2a$10$RkkI.UsQ./pUPfSkymP5YOlUNc3icodvitl6ZVtzlMdDZ7YO01bkG');
 
 -- sample coffee types:
 INSERT INTO coffee(NAME,

@@ -83,6 +83,6 @@ class Database {
         $this->admin_query->bind_param("s", $username);
         $this->admin_query->execute();
         $admin = $this->admin_query->get_result()->fetch_object();
-        return $admin && $password === $admin->password;
+        return $admin && password_verify($password, $admin->password);
     }
 }
