@@ -93,7 +93,7 @@ require_once "../actions/render.php";
             </div>
             <div class="right">
                 <div class="image-wrapper">
-                    <img src="../assets/images/gallery/background1.jpg" class="img" alt="icon">
+                    <img src="../assets/images/backgrounds/background1.jpg" class="img" alt="icon">
                 </div>
             </div>
             <div class="modal fade" id="modalMessageCreated">
