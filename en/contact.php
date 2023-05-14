@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "../actions/render.php";
+require_once "../includes/render.php";
 ?>
 <!doctype html>
 <html lang="en">

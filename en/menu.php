@@ -2,8 +2,8 @@
 
 use Database;
 
-require_once "../actions/render.php";
-require_once "../actions/config.php";
+require_once "../includes/render.php";
+require_once "../includes/config.php";
 ?>
 <!doctype html>
 <html lang="en">
