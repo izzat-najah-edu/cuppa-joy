@@ -56,11 +56,13 @@ require_once "../actions/render.php";
         <div class="container">
             <h2 class="text-center mb-5 font-bold">Shop's Gallery</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php for ($i = 1; $i <= 6; $i++) {
+                <?php
+                $dir = scandir("../assets/images/gallery/");
+                foreach ($dir as $image) {
                     echo <<<IMAGE
             <div class="col">
                 <div class="card">
-                    <img src="../assets/images/gallery/gallery$i.jpg" alt="Gallery$i"
+                    <img src="../assets/images/gallery/gallery$image.jpg" alt="$image"
                          class="card-img-top border border-dark rounded gallery-image">
                 </div>
             </div>
