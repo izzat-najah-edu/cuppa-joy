@@ -55,21 +55,7 @@ require_once "../actions/render.php";
     <section class="mb-5 py-5">
         <div class="container">
             <h2 class="text-center mb-5 font-bold">Shop's Gallery</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php
-                $dir = scandir("../assets/images/gallery/");
-                foreach ($dir as $image) {
-                    echo <<<IMAGE
-            <div class="col">
-                <div class="card">
-                    <img src="../assets/images/gallery/gallery$image.jpg" alt="$image"
-                         class="card-img-top border border-dark rounded gallery-image">
-                </div>
-            </div>
-        IMAGE;
-                }
-                ?>
-            </div>
+            <?php echo gallery("../assets/images/gallery/") ?>
         </div>
     </section>
     <hr>

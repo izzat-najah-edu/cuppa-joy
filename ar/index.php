@@ -52,19 +52,7 @@ require_once "../actions/render.php";
     <section class="mb-5 py-5">
         <div class="container">
             <h2 class="text-center mb-5 font-bold">صور المتجر</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php for ($i = 1; $i <= 6; $i++) {
-                    echo <<<IMAGE
-            <div class="col">
-                <div class="card">
-                    <img src="../assets/images/gallery/gallery$i.jpg" alt="Gallery$i"
-                         class="card-img-top border border-dark rounded gallery-image">
-                </div>
-            </div>
-        IMAGE;
-                }
-                ?>
-            </div>
+            <?php echo gallery("../assets/images/gallery/") ?>
         </div>
     </section>
     <hr>

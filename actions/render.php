@@ -12,6 +12,25 @@ function imageOverlay(string $backgroundImageURL, string $title, string $content
     OVERLAY;
 }
 
+function gallery(string $directory): string {
+    $directory = rtrim($directory, "/") . "/";
+    $gallery = array_diff(scandir($directory), array(".", ".."));
+
+    $html = '<div class="row row-cols-1 row-cols-md-3 g-4">';
+    foreach ($gallery as $image) {
+        $sanitizedImage = htmlspecialchars($image, ENT_QUOTES, 'UTF-8');
+        $html .= <<<IMAGE
+            <div class="col">
+                <div class="card">
+                    <img src="$directory$image" alt="$sanitizedImage"
+                         class="card-img-top border border-dark rounded gallery-image">
+                </div>
+            </div>
+        IMAGE;
+    }
+    return $html . '</div>';
+}
+
 function alert(string $message, string $strong = ""): string {
     return <<<ALERT
         <div class="alert alert-warning alert-dismissible">
