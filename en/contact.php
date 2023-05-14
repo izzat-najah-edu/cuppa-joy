@@ -97,7 +97,7 @@ require_once "../includes/component.php";
                 </div>
             </div>
             <div class="modal fade" id="modalMessageCreated">
-                <div class="modal-dialog">
+                <div class="modal-dialog text-black">
                     <div class="modal-content">
                         <div class="modal-body">
                             <h5>Message has been sent successfully!</h5>
@@ -119,17 +119,12 @@ require_once "../includes/component.php";
 <script>
     document.getElementById("message-form").addEventListener("submit", function (event) {
         event.preventDefault();
-        createMessage(this);
+        asyncRequest(
+            "create_message",
+            new FormData(document.getElementById("message-form")),
+            () => showModal(document.getElementById("modalMessageCreated"))
+        );
     });
-
-    function createMessage(messageForm) {
-        let xhr = new XMLHttpRequest();
-        xhr.open("post", "actions/create_message.php", true);
-        xhr.onload = function () {
-            triggerOnLoad(this, document.getElementById("modalMessageCreated"));
-        }
-        xhr.send(new FormData(messageForm));
-    }
 
     function setUpContactThemeToggle() {
         const inputs = document.querySelectorAll('.contact-input');

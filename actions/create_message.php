@@ -29,7 +29,7 @@ try {
     }
 
     echo json_encode([
-        "success" => true,
+        "success" => true
     ]);
 
 } catch (Exception $e) {
