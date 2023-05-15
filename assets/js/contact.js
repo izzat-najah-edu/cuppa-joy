@@ -1,6 +1,6 @@
 document.getElementById("message-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    asyncRequest(
+    requestAction(
         "create_message",
         new FormData(document.getElementById("message-form")),
         () => showModal(document.getElementById("modalMessageCreated"))

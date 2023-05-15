@@ -14,7 +14,7 @@ document.querySelectorAll(".quantity-change-button").forEach(button =>
         formData.set("id", button.dataset.id);
         formData.set("size", button.dataset.size);
         formData.set("quantity-change", button.classList.contains("quantity-increase") ? "1" : "-1");
-        asyncRequest(
+        requestAction(
             "change_quantity",
             formData,
             (response) => {
@@ -30,7 +30,7 @@ document.querySelectorAll(".remove-button").forEach(button =>
         const formData = new FormData();
         formData.set("id", button.dataset.id);
         formData.set("size", button.dataset.size);
-        asyncRequest(
+        requestAction(
             "remove_item",
             formData,
             () => {

@@ -19,7 +19,7 @@ function getCookie(name) {
     return null;
 }
 
-function asyncRequest(action, body, onload) {
+function requestAction(action, body, onload) {
     const xhr = new XMLHttpRequest();
     xhr.open("post", `../actions/${action}.php`, true);
     xhr.onload = function () {

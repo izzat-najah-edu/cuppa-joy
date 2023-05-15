@@ -1,6 +1,6 @@
 document.getElementById("subscribeForm").addEventListener("submit", event => {
     event.preventDefault();
-    asyncRequest(
+    requestAction(
         "subscribe",
         new FormData(document.getElementById("subscribeForm")),
         () => {
