@@ -35,30 +35,10 @@ class Database {
     }
 
     private function connect(): void {
-        try {
-            $this->connection = mysqli_init();
-            mysqli_ssl_set(
-                $this->connection,
-                NULL, NULL,
-                "/certs/DigiCertGlobalRootCA.crt.pem",
-                NULL, NULL
-            );
-        } catch (Exception $e) {
-            die("mysqli_ssl_set: " . $e->getMessage());
-        }
-        if (!mysqli_real_connect(
-            $this->connection,
-            getenv("DB_HOST"),
-            getenv("DB_USER"),
-            getenv("DB_PASS"),
-            "cuppa_joy",
-            3306, MYSQLI_CLIENT_SSL)
-        ) {
-            die("Connect Error (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
-        }
-        if ($this->connection->connect_error) {
-            die("Connection failed: " . $this->connection->connect_error);
-        }
+        $con = mysqli_init();
+        mysqli_ssl_set($con, NULL, NULL, "/certs/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+        mysqli_real_connect($con, getenv("DB_HOST"), getenv("DB_USER"), getenv("DB_PASS"), "cuppa_joy", 3306, MYSQLI_CLIENT_SSL);
+        $this->connection = $con;
     }
 
     private function prepare(): void {
