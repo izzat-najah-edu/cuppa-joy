@@ -37,18 +37,18 @@ class Database {
     private function connect(): void {
         $this->connection = mysqli_init();
 
-        if (mysqli_ssl_set(
+        if (!mysqli_ssl_set(
             $this->connection,
             NULL, NULL,
             "/certs/DigiCertGlobalRootCA.crt.pem",
             NULL, NULL
         )) {
-            echo "SSL set successfully.\n";
-        } else {
-            echo "Failed to set SSL: " . mysqli_error($this->connection) . "\n";
+            die('Setting SSL failed');
         }
 
-        if (mysqli_real_connect(
+        echo 'SSL set successfully.';
+
+        if (!mysqli_real_connect(
             $this->connection,
             getenv("DB_HOST"),
             getenv("DB_USER"),
@@ -56,11 +56,11 @@ class Database {
             "cuppa_joy",
             3306, MYSQLI_CLIENT_SSL
         )) {
-            echo "Connected successfully.\n";
-        } else {
-            echo "Failed to connect: " . mysqli_connect_error() . "\n";
-            die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
+            die('Connect Error (' . mysqli_connect_errno() . ') '
+                . mysqli_connect_error());
         }
+
+        echo 'Connected successfully.';
     }
 
     private function prepare(): void {
