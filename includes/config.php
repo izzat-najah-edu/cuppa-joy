@@ -46,7 +46,7 @@ class Database {
             $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
             $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
         } catch (mysqli_sql_exception $e) {
-            echo 'Database Error: ' . $e->getMessage();
+            echo "Database Error: " . $e->getMessage();
             die();
         }
 
