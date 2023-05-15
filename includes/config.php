@@ -48,9 +48,8 @@ class Database {
                 getenv("DB_USER"),
                 getenv("DB_PASS"),
                 "cuppa_joy",
-                3306, MYSQLI_CLIENT_SSL
-            )) {
-                die("Connect Error (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
+                3306, MYSQLI_CLIENT_SSL)) {
+                die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
             }
             $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
             $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
