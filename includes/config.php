@@ -35,33 +35,37 @@ class Database {
     }
 
     private function connect(): void {
-        $this->connection = mysqli_init();
+        try {
+            $this->connection = mysqli_init();
 
-        if (!mysqli_ssl_set(
-            $this->connection,
-            NULL, NULL,
-            "/certs/DigiCertGlobalRootCA.crt.pem",
-            NULL, NULL
-        )) {
-            die('Setting SSL failed');
+            if (!mysqli_ssl_set(
+                $this->connection,
+                NULL, NULL,
+                "/certs/DigiCertGlobalRootCA.crt.pem",
+                NULL, NULL
+            )) {
+                die('Setting SSL failed');
+            }
+
+            echo 'SSL set successfully.';
+
+            mysqli_real_connect(
+                $this->connection,
+                getenv("DB_HOST"),
+                getenv("DB_USER"),
+                getenv("DB_PASS"),
+                "cuppa_joy",
+            );
+
+            if (mysqli_connect_errno()) {
+                printf("Connect failed: %s\n", mysqli_connect_error());
+                exit();
+            }
+
+            echo 'Connected successfully.';
+        } catch (Throwable $e)  {
+            echo "something went wrong";
         }
-
-        echo 'SSL set successfully.';
-
-        mysqli_real_connect(
-            $this->connection,
-            getenv("DB_HOST"),
-            getenv("DB_USER"),
-            getenv("DB_PASS"),
-            "cuppa_joy",
-        );
-
-        if (mysqli_connect_errno()) {
-            printf("Connect failed: %s\n", mysqli_connect_error());
-            exit();
-        }
-
-        echo 'Connected successfully.';
     }
 
     private function prepare(): void {
