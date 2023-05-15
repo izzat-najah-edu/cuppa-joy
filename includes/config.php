@@ -74,7 +74,7 @@ class Database {
     }
 
     public function getAllCoffee(): mysqli_result|bool {
-        return $this->connection->query("SELECT * FROM coffee");
+        return $this->connection->query("select * from coffee");
     }
 
     public function createMessage(string $firstName, string $lastName, string $email, string $message): bool {
