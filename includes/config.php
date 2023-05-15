@@ -54,7 +54,6 @@ class Database {
             getenv("DB_USER"),
             getenv("DB_PASS"),
             "cuppa_joy",
-            3306, MYSQLI_CLIENT_SSL
         );
 
         if (mysqli_connect_errno()) {
