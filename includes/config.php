@@ -63,8 +63,8 @@ class Database {
             }
 
             echo 'Connected successfully.';
-        } catch (Throwable $e)  {
-            echo "something went wrong";
+        } catch (Throwable $e) {
+            echo $e->getMessage();
         }
     }
 
