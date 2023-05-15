@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'cuppajoy'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_479CC833E8164F469988D0FBB51EA316 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2AC2A063BAE84BDFA59263FE6BFC8A38 }}
           package: .
