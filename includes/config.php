@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include_once ".env";
+
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
