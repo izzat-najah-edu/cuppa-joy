@@ -46,7 +46,6 @@ class Database {
             __DIR__ . "/DigiCertGlobalRootCA.crt.pem",
             NULL, NULL
         );
-        include_once "local.env.php";
         mysqli_real_connect(
             $this->connection,
             getenv("DB_HOST"),
