@@ -35,13 +35,17 @@ class Database {
     }
 
     private function connect(): void {
-        $this->connection = mysqli_init();
-        mysqli_ssl_set(
-            $this->connection,
-            NULL, NULL,
-            "/certs/DigiCertGlobalRootCA.crt.pem",
-            NULL, NULL
-        );
+        try {
+            $this->connection = mysqli_init();
+            mysqli_ssl_set(
+                $this->connection,
+                NULL, NULL,
+                "/certs/DigiCertGlobalRootCA.crt.pem",
+                NULL, NULL
+            );
+        } catch (mysqli_sql_exception $e) {
+            die("Database Error: " . $e->getMessage());
+        }
         if (!mysqli_real_connect(
             $this->connection,
             getenv("DB_HOST"),
@@ -50,7 +54,7 @@ class Database {
             "cuppa_joy",
             3306, MYSQLI_CLIENT_SSL)
         ) {
-            die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
+            die("Connect Error (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
         }
         if ($this->connection->connect_error) {
             die("Connection failed: " . $this->connection->connect_error);
@@ -58,14 +62,10 @@ class Database {
     }
 
     private function prepare(): void {
-        try {
-            $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
-            $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
-            $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
-            $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
-        } catch (mysqli_sql_exception $e) {
-            die("Database Error: " . $e->getMessage());
-        }
+        $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
+        $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
+        $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
+        $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
     }
 
     public function getTaxRate(): float {
