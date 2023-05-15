@@ -35,10 +35,31 @@ class Database {
     }
 
     private function connect(): void {
-        $con = mysqli_init();
-        mysqli_ssl_set($con, NULL, NULL, "https://cuppajoy.azurewebsites.net/certs/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
-        mysqli_real_connect($con, getenv("DB_HOST"), getenv("DB_USER"), getenv("DB_PASS"), "cuppa_joy", 3306, MYSQLI_CLIENT_SSL);
-        $this->connection = $con;
+        $this->connection = mysqli_init();
+
+        if (mysqli_ssl_set(
+            $this->connection,
+            NULL, NULL,
+            "/certs/DigiCertGlobalRootCA.crt.pem",
+            NULL, NULL
+        )) {
+            echo "SSL set successfully.\n";
+        } else {
+            echo "Failed to set SSL: " . mysqli_error($this->connection) . "\n";
+        }
+
+        if (mysqli_real_connect(
+            $this->connection,
+            getenv("DB_HOST"),
+            getenv("DB_USER"),
+            getenv("DB_PASS"),
+            "cuppa_joy",
+            3306, MYSQLI_CLIENT_SSL
+        )) {
+            echo "Connected successfully.\n";
+        } else {
+            echo "Failed to connect: " . mysqli_connect_error() . "\n";
+        }
     }
 
     private function prepare(): void {
@@ -47,8 +68,8 @@ class Database {
             $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
             $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
             $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
-        } catch (Exception $e) {
-            die("prepare_stmt: " . $e->getMessage());
+        } catch (mysqli_sql_exception $e) {
+            die("Database Error: " . $e->getMessage());
         }
     }
 
