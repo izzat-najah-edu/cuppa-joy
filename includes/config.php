@@ -36,7 +36,7 @@ class Database {
 
     private function connect(): void {
         $con = mysqli_init();
-        mysqli_ssl_set($con, NULL, NULL, "/certs/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+        mysqli_ssl_set($con, NULL, NULL, "https://cuppajoy.azurewebsites.net/certs/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
         mysqli_real_connect($con, getenv("DB_HOST"), getenv("DB_USER"), getenv("DB_PASS"), "cuppa_joy", 3306, MYSQLI_CLIENT_SSL);
         $this->connection = $con;
     }
