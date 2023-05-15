@@ -42,26 +42,25 @@ class Database {
                 "DigiCertGlobalRootCA.crt.pem",
                 NULL, NULL
             );
-            mysqli_real_connect(
+            if (!mysqli_real_connect(
                 $this->connection,
                 getenv("DB_HOST"),
                 getenv("DB_USER"),
                 getenv("DB_PASS"),
                 "cuppa_joy",
                 3306, MYSQLI_CLIENT_SSL
-            );
+            )) {
+                die("Connect Error (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
+            }
             $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
             $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
             $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
             $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
         } catch (mysqli_sql_exception $e) {
-            echo "Database Error: " . $e->getMessage();
-            die();
+            die("Database Error: " . $e->getMessage());
         }
-
         if ($this->connection->connect_error) {
-            echo "Connection failed: " . $this->connection->connect_error;
-            die();
+            die("Connection failed: " . $this->connection->connect_error);
         }
     }
 
