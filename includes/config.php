@@ -42,7 +42,7 @@ class Database {
                 mysqli_ssl_set(
                     $this->connection,
                     NULL, NULL,
-                    "/certs/DigiCertGlobalRootCA.crt.pem",
+                    "DigiCertGlobalRootCA.crt.pem",
                     NULL, NULL
                 );
             } catch (Throwable $e) {
@@ -56,10 +56,11 @@ class Database {
                     getenv("DB_USER"),
                     getenv("DB_PASS"),
                     "cuppa_joy",
-                    3306, MYSQLI_CLIENT_SSL
+                    3306,
                 );
             } catch (Throwable $e) {
-                echo "mysqli_real_connect: " . $e->getMessage();
+                echo "mysqli_real_connect: " . $e->getMessage() . "<br>";
+                echo "Connect Error: " . mysqli_connect_error();
             }
 
         } catch (Throwable $e) {
