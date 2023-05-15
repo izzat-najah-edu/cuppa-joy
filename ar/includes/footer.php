@@ -15,10 +15,10 @@
             <div class="col-md-4">
                 <h5 class="footer-title mb-3">روابط سريعة</h5>
                 <ul>
-                    <li><a href="index" class="text-white text-decoration-none">الرئيسية</a></li>
-                    <li><a href="menu" class="text-white text-decoration-none">القائمة</a></li>
-                    <li><a href="about" class="text-white text-decoration-none">من نحن</a></li>
-                    <li><a href="contact" class="text-white text-decoration-none">اتصل بنا</a></li>
+                    <li><a href="index.php" class="text-white text-decoration-none">الرئيسية</a></li>
+                    <li><a href="menu.php" class="text-white text-decoration-none">القائمة</a></li>
+                    <li><a href="about.php" class="text-white text-decoration-none">من نحن</a></li>
+                    <li><a href="contact.php" class="text-white text-decoration-none">اتصل بنا</a></li>
                 </ul>
             </div>
             <div class="col-md-4">

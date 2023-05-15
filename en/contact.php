@@ -31,7 +31,7 @@ require_once "../includes/render.php";
                 </a>
             </li>
             <li>
-                <a href="index" class="nav-link">Home</a>
+                <a href="index.php" class="nav-link">Home</a>
             </li>
             <li>
                 <a href="#" class="nav-link">Join</a>

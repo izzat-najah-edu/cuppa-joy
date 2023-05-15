@@ -91,7 +91,7 @@ require_once "../includes/config.php";
                         <h5>تمت إضافة العنصر إلى السلة بنجاح!</h5>
                     </div>
                     <div class="modal-footer">
-                        <a href="cart" class="btn btn-warning">عرض في السلة</a>
+                        <a href="cart.php" class="btn btn-warning">عرض في السلة</a>
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal">إغلاق</button>
                     </div>
                 </div>

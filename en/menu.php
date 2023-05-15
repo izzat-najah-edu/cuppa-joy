@@ -90,7 +90,7 @@ require_once "../includes/config.php";
                         <h5>Item added to cart successfully!</h5>
                     </div>
                     <div class="modal-footer">
-                        <a href="cart" class="btn btn-warning">VIEW IN CART</a>
+                        <a href="cart.php" class="btn btn-warning">VIEW IN CART</a>
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal">CLOSE</button>
                     </div>
                 </div>
