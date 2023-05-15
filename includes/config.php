@@ -35,6 +35,14 @@ class Database {
 
     private function connect(): void {
         try {
+            $db_host = getenv('DB_HOST');
+            $db_user = getenv('DB_USER');
+            $db_pass = getenv('DB_PASS');
+
+            echo 'DB_HOST: ' . $db_host . '<br>';
+            echo 'DB_USER: ' . $db_user . '<br>';
+            echo 'DB_PASS: ' . $db_pass . '<br>';
+
             $this->connection = mysqli_init();
             mysqli_ssl_set(
                 $this->connection,
