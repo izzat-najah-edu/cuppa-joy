@@ -43,8 +43,8 @@ class Database {
                 "/certs/DigiCertGlobalRootCA.crt.pem",
                 NULL, NULL
             );
-        } catch (mysqli_sql_exception $e) {
-            die("Database Error: " . $e->getMessage());
+        } catch (Exception $e) {
+            die("mysqli_ssl_set: " . $e->getMessage());
         }
         if (!mysqli_real_connect(
             $this->connection,
@@ -62,10 +62,14 @@ class Database {
     }
 
     private function prepare(): void {
-        $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
-        $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
-        $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
-        $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
+        try {
+            $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
+            $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
+            $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
+            $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
+        } catch (Exception $e) {
+            die("prepare_stmt: " . $e->getMessage());
+        }
     }
 
     public function getTaxRate(): float {
