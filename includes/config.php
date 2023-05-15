@@ -39,7 +39,7 @@ class Database {
                 getenv("DB_HOST"),
                 getenv("DB_USER"),
                 getenv("DB_PASS"),
-                'cuppa_joy'
+                "cuppa_joy"
             );
             $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
             $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
