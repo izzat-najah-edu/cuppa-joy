@@ -59,6 +59,7 @@ class Database {
             echo "Connected successfully.\n";
         } else {
             echo "Failed to connect: " . mysqli_connect_error() . "\n";
+            die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
         }
     }
 
