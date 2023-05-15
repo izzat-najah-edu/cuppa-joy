@@ -13,7 +13,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"]) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="../favicon.png" type="image/x-icon">
+    <link rel="icon" href="../assets/images/icons/favicon.png" type="image/x-icon">
     <title>Login | Admin</title>
 </head>
 <body>

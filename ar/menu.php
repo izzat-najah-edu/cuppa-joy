@@ -16,7 +16,7 @@ require_once "../includes/config.php";
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/arabic.css">
     <link rel="stylesheet" href="../assets/css/menu.css">
-    <link rel="icon" href="../favicon.png" type="image/x-icon">
+    <link rel="icon" href="../assets/images/icons/favicon.png" type="image/x-icon">
     <title>القائمة | كابا جوي</title>
 </head>
 <body>
