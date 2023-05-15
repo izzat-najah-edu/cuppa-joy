@@ -56,6 +56,7 @@ class Database {
             "cuppa_joy",
             3306,
         );
+        mysqli_set_charset($this->connection, "utf8");
     }
 
     private function prepare(): void {
