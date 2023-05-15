@@ -42,7 +42,7 @@ class Database {
                 mysqli_ssl_set(
                     $this->connection,
                     NULL, NULL,
-                    "DigiCertGlobalRootCA.crt.pem",
+                    __DIR__ . "/DigiCertGlobalRootCA.crt.pem",
                     NULL, NULL
                 );
             } catch (Throwable $e) {
