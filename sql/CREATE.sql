@@ -1,5 +1,5 @@
-CREATE DATABASE cuppa_joy_coffee_shop;
-USE cuppa_joy_coffee_shop;
+CREATE DATABASE cuppa_joy;
+USE cuppa_joy;
 
 CREATE TABLE coffee
 (
