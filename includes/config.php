@@ -39,7 +39,7 @@ class Database {
             mysqli_ssl_set(
                 $this->connection,
                 NULL, NULL,
-                "../assets/DigiCertGlobalRootCA.crt.pem",
+                "DigiCertGlobalRootCA.crt.pem",
                 NULL, NULL
             );
             mysqli_real_connect(
