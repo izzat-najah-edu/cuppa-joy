@@ -22,8 +22,12 @@ class Database {
     }
 
     private function __construct() {
-        $this->connect();
-        $this->prepare();
+        try {
+            $this->connect();
+            $this->prepare();
+        } catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+        }
     }
 
     public function __destruct() {
@@ -35,48 +39,28 @@ class Database {
     }
 
     private function connect(): void {
-        try {
-            $this->connection = mysqli_init();
-
-            try {
-                mysqli_ssl_set(
-                    $this->connection,
-                    NULL, NULL,
-                    __DIR__ . "/DigiCertGlobalRootCA.crt.pem",
-                    NULL, NULL
-                );
-            } catch (Throwable $e) {
-                echo "mysqli_ssl_set: " . $e->getMessage();
-            }
-
-            try {
-                mysqli_real_connect(
-                    $this->connection,
-                    getenv("DB_HOST"),
-                    getenv("DB_USER"),
-                    getenv("DB_PASS"),
-                    "cuppa_joy",
-                    3306,
-                );
-            } catch (Throwable $e) {
-                echo "mysqli_real_connect: " . $e->getMessage() . "<br>";
-                echo "Connect Error: " . mysqli_connect_error();
-            }
-
-        } catch (Throwable $e) {
-            echo "general: " . $e->getMessage();
-        }
+        $this->connection = mysqli_init();
+        mysqli_ssl_set(
+            $this->connection,
+            NULL, NULL,
+            __DIR__ . "/DigiCertGlobalRootCA.crt.pem",
+            NULL, NULL
+        );
+        mysqli_real_connect(
+            $this->connection,
+            getenv("DB_HOST"),
+            getenv("DB_USER"),
+            getenv("DB_PASS"),
+            "cuppa_joy",
+            3306,
+        );
     }
 
     private function prepare(): void {
-        try {
-            $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
-            $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
-            $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
-            $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
-        } catch (mysqli_sql_exception $e) {
-            die("Database Error: " . $e->getMessage());
-        }
+        $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
+        $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
+        $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
+        $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
     }
 
     public function getTaxRate(): float {
