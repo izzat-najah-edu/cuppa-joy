@@ -35,11 +35,20 @@ class Database {
 
     private function connect(): void {
         try {
-            $this->connection = new mysqli(
+            $this->connection = mysqli_init();
+            mysqli_ssl_set(
+                $this->connection,
+                NULL, NULL,
+                "../assets/DigiCertGlobalRootCA.crt.pem",
+                NULL, NULL
+            );
+            mysqli_real_connect(
+                $this->connection,
                 getenv("DB_HOST"),
                 getenv("DB_USER"),
                 getenv("DB_PASS"),
-                "cuppa_joy"
+                "cuppa_joy",
+                3306, MYSQLI_CLIENT_SSL
             );
             $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
             $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
