@@ -48,16 +48,18 @@ class Database {
 
         echo 'SSL set successfully.';
 
-        if (!mysqli_real_connect(
+        mysqli_real_connect(
             $this->connection,
             getenv("DB_HOST"),
             getenv("DB_USER"),
             getenv("DB_PASS"),
             "cuppa_joy",
             3306, MYSQLI_CLIENT_SSL
-        )) {
-            die('Connect Error (' . mysqli_connect_errno() . ') '
-                . mysqli_connect_error());
+        );
+
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_error());
+            exit();
         }
 
         echo 'Connected successfully.';
