@@ -38,33 +38,32 @@ class Database {
         try {
             $this->connection = mysqli_init();
 
-            if (!mysqli_ssl_set(
-                $this->connection,
-                NULL, NULL,
-                "/certs/DigiCertGlobalRootCA.crt.pem",
-                NULL, NULL
-            )) {
-                die('Setting SSL failed');
+            try {
+                mysqli_ssl_set(
+                    $this->connection,
+                    NULL, NULL,
+                    "/certs/DigiCertGlobalRootCA.crt.pem",
+                    NULL, NULL
+                );
+            } catch (Throwable $e) {
+                echo "mysqli_ssl_set: " . $e->getMessage();
             }
 
-            echo 'SSL set successfully.';
-
-            mysqli_real_connect(
-                $this->connection,
-                getenv("DB_HOST"),
-                getenv("DB_USER"),
-                getenv("DB_PASS"),
-                "cuppa_joy",
-            );
-
-            if (mysqli_connect_errno()) {
-                printf("Connect failed: %s\n", mysqli_connect_error());
-                exit();
+            try {
+                mysqli_real_connect(
+                    $this->connection,
+                    getenv("DB_HOST"),
+                    getenv("DB_USER"),
+                    getenv("DB_PASS"),
+                    "cuppa_joy",
+                    3306, MYSQLI_CLIENT_SSL
+                );
+            } catch (Throwable $e) {
+                echo "mysqli_real_connect: " . $e->getMessage();
             }
 
-            echo 'Connected successfully.';
         } catch (Throwable $e) {
-            echo $e->getMessage();
+            echo "general: " . $e->getMessage();
         }
     }
 
