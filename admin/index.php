@@ -7,7 +7,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"]) {
     exit;
 }
 
-require_once "../includes/render.php"
+require_once "../includes/render.php";
 ?>
 <!doctype html>
 <html lang="en">
