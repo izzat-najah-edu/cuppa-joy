@@ -1,0 +1,7 @@
+@import "main/general.css";
+@import "main/fixes.css";
+
+main {
+    padding-left: 0;
+    padding-right: 0;
+}

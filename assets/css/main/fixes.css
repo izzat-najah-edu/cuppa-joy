@@ -1,0 +1,53 @@
+.dropdown-item:active {
+    background-color: #343a40 !important; /* Bootstrap's dark color */
+    color: #ffffff !important;
+}
+
+.dropdown-item input[type="radio"] {
+    display: none;
+}
+
+.dropdown-item span {
+    cursor: pointer;
+}
+
+.dropdown-item input[type="radio"]:checked + span {
+    text-decoration: underline;
+}
+
+.gallery-image {
+    height: 250px; /* Adjust this value as needed */
+    object-fit: cover;
+}
+
+@media (min-width: 1200px) {
+    .max-width-1200, .text-box {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 400px) {
+    .max-width-400 {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .image-overlay {
+        height: 40vh;
+    }
+
+    .text-box {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+}
