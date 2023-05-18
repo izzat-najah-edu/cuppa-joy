@@ -7,7 +7,7 @@ document.getElementById("message-form").addEventListener("submit", function (eve
     );
 });
 
-function toggleTheme() {
+function changeTheme() {
     document.body.classList.toggle("dark");
     // toggleBtn.classList.toggle("bx-sun");
     document.querySelectorAll("*").forEach((el) => {
@@ -18,9 +18,9 @@ function toggleTheme() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", toggleTheme);
+document.addEventListener("DOMContentLoaded", changeTheme);
 
-document.querySelector(".theme-toggle").addEventListener("click", toggleTheme);
+document.querySelector(".theme-toggle").addEventListener("click", changeTheme);
 
 document.querySelectorAll('.contact-input').forEach((ipt) => {
     ipt.addEventListener('focus', () => {
