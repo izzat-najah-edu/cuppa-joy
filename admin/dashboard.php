@@ -22,6 +22,16 @@ require_once "../includes/config.php";
 <main>
     <?php echo imageOverlay("../assets/images/backgrounds/coffee.jpg", "DASHBOARD") ?>
     <div class="container mt-3">
+        <?php
+        if (isset($_SESSION["delete_message"])) {
+            echo alert($_SESSION["delete_message"]);
+            unset($_SESSION["delete_message"]);
+        }
+        if (isset($_SESSION["insert_message"])) {
+            echo alert($_SESSION["insert_message"]);
+            unset($_SESSION["insert_message"]);
+        }
+        ?>
         <hr>
         <section>
             <h2 class="mt-3">Add New Product</h2>
