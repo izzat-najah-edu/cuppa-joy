@@ -116,4 +116,5 @@ class Database {
     public function getAllMessages(): mysqli_result|bool {
         return $this->connection->query("SELECT * FROM messages ORDER BY created_at DESC LIMIT 10");
     }
+
 }
