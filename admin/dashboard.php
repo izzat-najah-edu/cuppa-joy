@@ -38,28 +38,23 @@ require_once "../includes/config.php";
             <form action="actions/add_product.php" method="post" class="p-3 rounded">
                 <div class="form-group">
                     <label for="insert_name">Name:</label>
-                    <input type="text" class="form-control" id="insert_name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="insert_nameArabic">Name: [in arabic]</label>
-                    <input type="text" class="form-control" id="insert_nameArabic" name="name-arabic" required>
+                    <input type="text" class="form-control" id="insert_name" name="name"
+                           placeholder="Product Name" required>
                 </div>
                 <div class="form-group">
                     <label for="insert_description">Description:</label>
-                    <textarea class="form-control" id="insert_description" name="description" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="insert_descriptionArabic">Description:</label>
-                    <textarea class="form-control" id="insert_descriptionArabic" name="description-arabic"
-                              required></textarea>
+                    <textarea class="form-control" id="insert_description" name="description"
+                              placeholder="Product Description" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="insert_price">Price:</label>
-                    <input type="number" step="0.01" class="form-control" id="insert_price" name="price" required>
+                    <input type="number" step="0.01" class="form-control" id="insert_price" name="price"
+                           placeholder="Product Price" required>
                 </div>
                 <div class="form-group">
-                    <label for="insert_imageURL">Image URL: [e.g. 'images/coffee/name.jpg']</label>
-                    <input type="text" class="form-control" id="insert_imageURL" name="image-url" required>
+                    <label for="insert_imageURL">Image URL:</label>
+                    <input type="text" class="form-control" id="insert_imageURL" name="image-url"
+                           placeholder="Product Image [e.g. 'images/coffee/name.jpg']" required>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add Coffee</button>
