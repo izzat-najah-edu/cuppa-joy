@@ -66,7 +66,7 @@ require_once "../includes/config.php";
                                             class="btn btn-outline-dark remove-button">Remove</button>
                                 </td>
                             </tr>
-                        ROW;
+                            ROW;
                                 }
                             }
                             ?>

@@ -79,7 +79,7 @@ require_once "../includes/config.php";
                     </div>
                 </div>
             </div>
-        CARD;
+            CARD;
             }
             ?>
         </div>

@@ -69,7 +69,7 @@ require_once "../includes/config.php";
                 <li class="list-group-item">
                     Message: $row->message - NAME: $row->first_name $row->last_name - $row->email - CREATED AT: $row->created_at
                 </li>
-            ITEM;
+                ITEM;
                 }
                 ?>
             </ul>
