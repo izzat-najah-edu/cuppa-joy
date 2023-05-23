@@ -41,7 +41,7 @@ require_once "../includes/config.php";
                     <input type="text" class="form-control" id="insert_name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="insert_nameArabic">Name in Arabic:</label>
+                    <label for="insert_nameArabic">Name: [in arabic]</label>
                     <input type="text" class="form-control" id="insert_nameArabic" name="name-arabic" required>
                 </div>
                 <div class="form-group">
@@ -58,7 +58,7 @@ require_once "../includes/config.php";
                     <input type="number" step="0.01" class="form-control" id="insert_price" name="price" required>
                 </div>
                 <div class="form-group">
-                    <label for="insert_imageURL">Image URL:</label>
+                    <label for="insert_imageURL">Image URL: [e.g. 'images/coffee/name.jpg']</label>
                     <input type="text" class="form-control" id="insert_imageURL" name="image-url" required>
                 </div>
                 <div class="form-group">
