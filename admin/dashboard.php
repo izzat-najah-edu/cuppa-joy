@@ -76,7 +76,7 @@ require_once "../includes/config.php";
                 while ($row = $result->fetch_object()) {
                     echo <<<ITEM
                 <li class="list-group-item">
-                    Message: $row->message - NAME: $row->first_name $row->last_name - $row->email - CREATED AT: $row->created_at
+                    MESSAGE: $row->message - NAME: $row->first_name $row->last_name - $row->email - CREATED AT: $row->created_at
                 </li>
                 ITEM;
                 }
