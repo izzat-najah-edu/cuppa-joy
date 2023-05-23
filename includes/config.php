@@ -102,7 +102,7 @@ class Database {
         return $this->message_insert->execute();
     }
 
-    public function deleteCoffee(string $name) {
+    public function deleteCoffee(string $name): bool {
         $this->coffee_delete->bind_param("s", $name);
         return $this->coffee_delete->execute();
     }
