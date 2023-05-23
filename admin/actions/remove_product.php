@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 if (!isset($_POST["name"]) ||
     !Database::getInstance()->deleteCoffee($_POST["name"])) {
-    $_SESSION["delete_message"] = "Invalid Product Name!";
+    $_SESSION["delete_message"] = "Invalid product name!";
 } else {
-    $_SESSION["delete_message"] = "Product [{$_POST['name']}] Has Been Deleted Successfully!";
+    $_SESSION["delete_message"] = "Product [{$_POST['name']}] has been deleted successfully!";
 }
 
 header("Location: ../dashboard.php");
