@@ -27,20 +27,29 @@ require_once "../includes/config.php";
             <h2 class="mt-3">Add New Product</h2>
             <form action="actions/add_product.php" method="post" class="p-3 rounded">
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <label for="insert_name">Name:</label>
+                    <input type="text" class="form-control" id="insert_name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="description">Description:</label>
-                    <textarea class="form-control" id="description" name="description"></textarea>
+                    <label for="insert_nameArabic">Name in Arabic:</label>
+                    <input type="text" class="form-control" id="insert_nameArabic" name="name-arabic" required>
                 </div>
                 <div class="form-group">
-                    <label for="price">Price:</label>
-                    <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+                    <label for="insert_description">Description:</label>
+                    <textarea class="form-control" id="insert_description" name="description" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="image_url">Image URL:</label>
-                    <input type="text" class="form-control" id="image_url" name="image_url">
+                    <label for="insert_descriptionArabic">Description:</label>
+                    <textarea class="form-control" id="insert_descriptionArabic" name="description-arabic"
+                              required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="insert_price">Price:</label>
+                    <input type="number" step="0.01" class="form-control" id="insert_price" name="price" required>
+                </div>
+                <div class="form-group">
+                    <label for="insert_imageURL">Image URL:</label>
+                    <input type="text" class="form-control" id="insert_imageURL" name="image-url" required>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add Coffee</button>
@@ -52,8 +61,8 @@ require_once "../includes/config.php";
             <h2 class="mt-3">Delete Product</h2>
             <form action="actions/remove_product.php" method="post" class="p-3 rounded">
                 <div class="form-group">
-                    <label for="delete_id">Coffee Name:</label>
-                    <input type="text" class="form-control" id="delete_id" name="name" required>
+                    <label for="delete_name">Coffee Name:</label>
+                    <input type="text" class="form-control" id="delete_name" name="name" required>
                 </div>
                 <button type="submit" class="btn btn-danger">Delete Coffee</button>
             </form>
