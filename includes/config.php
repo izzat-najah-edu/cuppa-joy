@@ -13,6 +13,8 @@ class Database {
     private mysqli $connection;
     private mysqli_stmt $admin_query;
     private mysqli_stmt $coffee_query;
+    private mysqli_stmt $coffee_insert;
+    private mysqli_stmt $coffee_delete;
     private mysqli_stmt $message_insert;
     private mysqli_stmt $subscriber_insert;
 
@@ -60,10 +62,18 @@ class Database {
     }
 
     private function prepare(): void {
-        $this->admin_query = $this->connection->prepare("select * from `admin` where username=?");
-        $this->coffee_query = $this->connection->prepare("select * from coffee where id=?");
-        $this->message_insert = $this->connection->prepare("insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
-        $this->subscriber_insert = $this->connection->prepare("insert into subscribers (email) values (?)");
+        $this->admin_query = $this->connection->prepare(
+            "select * from `admin` where username=?");
+        $this->coffee_query = $this->connection->prepare(
+            "select * from coffee where id=?");
+        $this->coffee_insert = $this->connection->prepare(
+            "insert into coffee (name, description, price, image_url, name_arabic, description_arabic) values (?,?,?,?,?,?)");
+        $this->coffee_delete = $this->connection->prepare(
+            "delete from coffee where name=?");
+        $this->message_insert = $this->connection->prepare(
+            "insert into messages (first_name, last_name, email, message) values (?,?,?,?)");
+        $this->subscriber_insert = $this->connection->prepare(
+            "insert into subscribers (email) values (?)");
     }
 
     public function getTaxRate(): float {
@@ -80,7 +90,28 @@ class Database {
         return $this->connection->query("select * from coffee");
     }
 
-    public function createMessage(string $firstName, string $lastName, string $email, string $message): bool {
+    public function insertCoffee(
+        string $name,
+        string $description,
+        float  $price,
+        string $image_url,
+        string $name_arabic,
+        string $description_arabic): bool {
+        $this->coffee_insert->bind_param(
+            "ssdsss", $name, $description, $price, $image_url, $name_arabic, $description_arabic);
+        return $this->message_insert->execute();
+    }
+
+    public function deleteCoffee(string $name) {
+        $this->coffee_delete->bind_param("s", $name);
+        return $this->coffee_delete->execute();
+    }
+
+    public function createMessage(
+        string $firstName,
+        string $lastName,
+        string $email,
+        string $message): bool {
         $this->message_insert->bind_param("ssss", $firstName, $lastName, $email, $message);
         return $this->message_insert->execute();
     }
