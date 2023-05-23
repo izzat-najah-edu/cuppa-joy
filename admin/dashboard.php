@@ -1,7 +1,10 @@
 <?php namespace html;
 
+use Database;
+
 require_once "lock.php";
 require_once "../includes/render.php";
+require_once "../includes/config.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,11 +63,14 @@ require_once "../includes/render.php";
             <h2 class="mt-3">Latest Messages</h2>
             <ul class="list-group">
                 <?php
-                // Query the database for the latest messages and display them
-                // $result = $connection->query("SELECT * FROM messages ORDER BY created_at DESC LIMIT 10");
-                // while ($row = $result->fetch_assoc()) {
-                //     echo "<li class=\"list-group-item\">" . htmlspecialchars($row['message']) . " - " . htmlspecialchars($row['first_name']) . " " . htmlspecialchars($row['last_name']) . "</li>";
-                // }
+                $result = Database::getInstance()->getAllMessages();
+                while ($row = $result->fetch_object()) {
+                    echo <<<ITEM
+                <li class="list-group-item">
+                    Message: $row->message - NAME: $row->first_name $row->last_name - $row->email - CREATED AT: $row->created_at
+                </li>
+            ITEM;
+                }
                 ?>
             </ul>
         </section>

@@ -96,4 +96,8 @@ class Database {
         $admin = $this->admin_query->get_result()->fetch_object();
         return $admin && password_verify($password, $admin->password);
     }
+
+    public function getAllMessages(): mysqli_result|bool {
+        return $this->connection->query("SELECT * FROM messages ORDER BY created_at DESC LIMIT 10");
+    }
 }
