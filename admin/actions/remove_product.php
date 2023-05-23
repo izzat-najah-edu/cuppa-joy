@@ -11,7 +11,7 @@ if (!isset($_POST["name"]) ||
     !Database::getInstance()->deleteCoffee($_POST["name"])) {
     $_SESSION["delete_message"] = "Invalid Product Name!";
 } else {
-    $_SESSION["delete_message"] = "Product Has Been Deleted Successfully!";
+    $_SESSION["delete_message"] = "Product [{$_POST['name']}] Has Been Deleted Successfully!";
 }
 
 header("Location: ../dashboard.php");
