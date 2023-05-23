@@ -37,8 +37,7 @@ require_once "../includes/config.php";
             <?php
             // Generate all coffee figures from the database:
             $result = Database::getInstance()->getAllCoffee();
-            for ($i = 0; $i < $result->num_rows; $i++) {
-                $row = $result->fetch_object();
+            while ($row = $result->fetch_object()) {
                 echo <<<CARD
             <div class="card menu-item">
                 <img class="card-img-top" src="../assets/$row->image_url" alt="$row->name">
