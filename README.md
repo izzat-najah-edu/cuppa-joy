@@ -1,35 +1,84 @@
 # Cuppa Joy
 
-Cuppa Joy is a fictional coffee shop website, designed to showcase the range of services, products, and events on offer.
-The site is crafted with a blend of technology, culture, and creativity, serving as a digital gateway to the coffee
-shop's unique ambiance.
+Cuppa Joy is a coffee shop website, designed to showcase the range of services, products, and events for this coffee
+shop. The site is developed primarily **for Educational Purposes**, demonstrating how to build a completely functional
+website from scratch using basic web technologies like php and plain html, css, javascript.
+You can check the live website right now [here](https://cuppajoy.azurewebsites.net).
 
-## Features
+## Table of Contents
 
-- **Responsive design:** The website is built to provide an optimal viewing experience, allowing easy reading and
-  navigation across a wide range of devices, from desktop computers to mobile phones.
-
-- **Multilingual Support:** The site supports both English and Arabic languages, catering to a diverse user base.
-
-- **Coffee Menu:** The website features a dynamic coffee menu, sourced from a MySQL database, offering a detailed
-  display of various coffee options, including their names, descriptions, prices, and images. The menu supports both
-  English and Arabic language inputs.
-
-- **Event Gallery:** This section displays a collection of events that have taken place at the coffee shop, presented in
-  an attractive, easy-to-navigate gallery.
-
-- **Contact Form:** The website includes a contact form for customers to easily get in touch with the coffee shop. This
-  data is also saved in the MySQL database for future reference.
-
-- **Subscriber Registration:** Visitors can sign up for a newsletter via a registration form, allowing them to receive
-  regular updates from the coffee shop. The subscriber data is stored securely in the MySQL database.
+- [Technologies](#technologies)
+- [Features Overview](#features-overview)
+    - [Functionality](#functionality)
+    - [Design](#design)
+    - [Accessibility](#accessibility)
+    - [Database Management](#database-management)
+- [Setup](#setup)
+- [Credits](#credits)
 
 ## Technologies
 
-The website is built using HTML, CSS, and JavaScript for the frontend, Bootstrap 5 for the responsive design, and PHP &
-MySQL for the backend. AJAX has also been implemented for a better user experience.
+This PHP project is built from scratch (for educational purposes), no libraries are used.
+The website is live right now on `https://cuppajoy.azurewebsites.net`. hosted by Azure services.
+
+- **HTML, CSS, Javascript**
+- **PHP & MySQL**
+- **Bootstrap**
+- **AJAX**
+- **Azure Services:**
+    - *Azure App Service* used to host the website.
+    - *Azure Database for MySQL* to manage the database.
+
+## Features Overview
+
+Here is a breakdown of the main features of Cuppa Joy website
+
+### Functionality:
+
+- **Coffee Menu:** A dynamic menu displaying a variety of coffee options, sourced from a MySQL database. It includes
+  details such as names, descriptions, prices, and images, and supports inputs in both English and Arabic.
+
+- **Order Placement:** The website facilitates the process of placing orders for pickup or delivery, creating a seamless
+  user experience.
+
+- **Store Locator:** To locate the store location.
+
+- **Event Gallery:** To showcase store events.
+
+- **About Section:** To display relevant information about the coffee shop.
+
+### Design:
+
+- **Multilingual Support:** The website is fully accessible in both English and Arabic, broadening its reach to a
+  diverse user base.
+
+- **Theme Options:** Support of light & dark themes, enhancing user experience.
+
+- **Responsive Design:** The layout is optimized for easy reading and navigation across various devices, from desktops
+  to mobile phones.
+
+### Accessibility:
+
+- **Contact Form:** A convenient form for customers to send messages, improving direct communication with the coffee
+  shop.
+
+- **Subscription Form:** Customers can subscribe to receive regular updates and newsletters, fostering customer
+  engagement.
+
+- **Social Media Links:** Easy access to the coffee shop's social media platforms for enhanced customer interaction and
+  updates.
+
+### Database Management:
+
+- **Product Database:** An organized MySQL database containing all product details.
+
+- **User Messaging:** The system is designed to receive and store users' messages effectively.
+
+- **Subscription Management:** The MySQL database securely stores and manages all user subscriptions.
 
 ## Setup
+
+To test the website on your local device, please follow this setup:
 
 #### Prerequisites
 
