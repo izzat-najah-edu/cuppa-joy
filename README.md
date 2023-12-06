@@ -7,27 +7,33 @@ You can check the live website right now [here](https://cuppajoy.azurewebsites.n
 
 ## Table of Contents
 
-- [Technologies](#technologies)
+- [Demo](#demo)
 - [Features Overview](#features-overview)
     - [Functionality](#functionality)
     - [Design](#design)
     - [Accessibility](#accessibility)
     - [Database Management](#database-management)
+- [Technologies](#technologies)
 - [Setup](#setup)
 - [Credits](#credits)
 
-## Technologies
+## Demo
 
-This PHP project is built from scratch (for educational purposes), no libraries are used.
-The website is live right now on `https://cuppajoy.azurewebsites.net`. hosted by Azure services.
+### Hero
 
-- **HTML, CSS, Javascript**
-- **PHP & MySQL**
-- **Bootstrap**
-- **AJAX**
-- **Azure Services:**
-    - *Azure App Service* used to host the website.
-    - *Azure Database for MySQL* to manage the database.
+![Hero Section](https://github.com/izzat5233/cuppa-joy/assets/92182269/6916b85d-54b2-4831-b87b-d70b6b145070)
+
+### Menu
+
+![Shop's Menu](https://github.com/izzat5233/cuppa-joy/assets/92182269/a37f487a-c897-4f1c-8f0c-eba1e85f4e1a)
+
+### Gallery
+
+![Shop's Gallery](https://github.com/izzat5233/cuppa-joy/assets/92182269/985124d0-a457-4812-ba09-ed4ef32ee037)
+
+### Checkout
+
+![Checkout Page](https://github.com/izzat5233/cuppa-joy/assets/92182269/a9ccb463-663a-424e-b092-cb5cb59df26a)
 
 ## Features Overview
 
@@ -76,15 +82,28 @@ Here is a breakdown of the main features of Cuppa Joy website
 
 - **Subscription Management:** The MySQL database securely stores and manages all user subscriptions.
 
+## Technologies
+
+This PHP project is built from scratch (for educational purposes), no libraries are used.
+The website is live right now on `https://cuppajoy.azurewebsites.net`. hosted by Azure services.
+
+- **HTML, CSS, Javascript**
+- **PHP & MySQL**
+- **Bootstrap**
+- **AJAX**
+- **Azure Services:**
+    - *Azure App Service* used to host the website.
+    - *Azure Database for MySQL* to manage the database.
+
 ## Setup
 
 To test the website on your local device, please follow this setup:
 
-#### Prerequisites
+### Prerequisites
 
 - XAMPP (Apache, MySQL, PHP)
 
-#### Installation
+### Installation
 
 1. Download and install XAMPP from the [official website](https://www.apachefriends.org/index.html).
 2. Clone or download the Cuppa Joy project from the repository.
@@ -94,11 +113,11 @@ To test the website on your local device, please follow this setup:
 6. Import and execute the `CREATE.sql` file located in the `sql` folder to set up the necessary tables.
 7. Import and execute the `INSERT.sql` file from the same location to fill the tables with data.
 
-#### Security Fix
+### Security Fix
 
 - After setting up the database, make sure to delete the `sql` file to prevent public access from users.
 
-#### Usage
+### Usage
 
 - Open your browser and go to `http://localhost/cuppa-joy`.
 - Explore the website.
