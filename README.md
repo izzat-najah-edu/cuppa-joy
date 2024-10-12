@@ -84,7 +84,6 @@ Here is a breakdown of the main features of Cuppa Joy website
 ## Technologies
 
 This PHP project is built from scratch (for educational purposes), no libraries are used.
-The website is live right now on `https://cuppajoy.azurewebsites.net`. hosted by Azure services.
 
 - **HTML, CSS, Javascript**
 - **PHP & MySQL**
