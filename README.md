@@ -3,7 +3,6 @@
 Cuppa Joy is a coffee shop website, designed to showcase the range of services, products, and events for this coffee
 shop. The site is developed primarily **for Educational Purposes**, demonstrating how to build a completely functional
 website from scratch using basic web technologies like php and plain html, css, javascript.
-You can check the live website right now [here](https://cuppajoy.azurewebsites.net).
 
 ## Table of Contents
 
